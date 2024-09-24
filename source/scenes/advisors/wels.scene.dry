@@ -31,8 +31,8 @@ if (Q.difficulty >= 0) {
 
 @quicktest
 title: Quick Test
-on_arrival: radicalism += 2
-go-to: unemployment_insurance_1
+on_arrival: radicalism += 2; reichswehr_strength = 0; 
+go-to: military_affairs
 
 Suddenly.
 
