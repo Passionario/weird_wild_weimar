@@ -29,7 +29,7 @@ if (Q.difficulty >= 0) {
 }
 !}
 
-@quick_test
+@quicktest
 title: Quick Test
 on_arrival: radicalism += 2
 go-to: unemployment_insurance_1
