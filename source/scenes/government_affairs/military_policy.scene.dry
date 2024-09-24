@@ -35,7 +35,7 @@ The military has fewer guns and fewer soldiers. There is no hint of a coup yet, 
 
 @disband_reichswehr
 unavailable-subtitle: [? if nationalism >= 46 : Nationalism is too strong. ?] [? if pacifism <= 4 : There is insufficient support for pacifism. ?] [? if judicial_reform < 3 : The judiciary would never allow this. ?]
-choose-if: (pacifism >= 5 and nationalism <= 45 and judicial_reform >=3); 
+choose-if: pacifism >= 5 and nationalism <= 45 and judicial_reform >= 2; 
 on-arrival: disband_military = 1; coalition_dissent += 2 if (in_grand_coalition or in_weimar_coalition); reichswehr_militancy = 0; reichswehr_loyalty = 0; left_dissent -= 20; center_dissent += 20; coup_progress += 2; reichswehr_goal_completed = 1; reichswehr_minister = "N/A"; reichswehr_minister_party = "N/A"; kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.1; sa_strength += 50; sh_strength += 50; west_relation += 3; east_relation += 3; reparations_negotiation += 5;
 
 Our attempt is successful and Reichswehr is no more! Our European neighbours praise our decision as the crowning moment of Pax Versailles. The centrists and reactionaries at home are fuming with terror and anger. 
