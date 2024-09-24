@@ -34,20 +34,22 @@ on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; reic
 The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
 
 @disband
-view-if: reichswehr_strength = 0
+view-if: reichswehr_strength = 0 and disband_military = 0
 unavailable-subtitle: The judiciary will never allow it.
 choose-if: judicial_reform >= 3
 go-to: disband_good if (pacifism >= 5 and nationalism <= 45); disband_fail if (pacifism <= 4 or nationalism >= 46);
 
+Now that the military exists mostly on paper, we have decided to put a nail in its coffin and formally disband it.
+
 @disband_good
 on-arrival: disband_military = 1; coalition_dissent += 2 if (in_grand_coalition or in_weimar_coalition); reichswehr_militancy = 0; reichswehr_loyalty = 0; left_dissent -= 20; center_dissent += 20; coup_progress += 2; reichswehr_goal_completed = 1; reichswehr_minister = "N/A"; reichswehr_minister_party = "N/A"; kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.1; sa_strength += 50; sh_strength += 50; west_relation += 3; east_relation += 3; reparations_negotiation += 5
 
-Reichswehr is no more. Our European neighbours praise our decision as the crowning moment of Pax Versailles. The centrists and reactionaries at home are fuming with terror and anger. One way or another, we have changed history and nothing will ever be the same.
+Our attempt is successful and Reichswehr is no more! Our European neighbours praise our decision as the crowning moment of Pax Versailles. The centrists and reactionaries at home are fuming with terror and anger. 
 
 @disband_fail
 on_arrival: disband_military = 1; coalition_dissent += 1; reichswehr_loyalty -= 0.05; coup_progress += 1; z_relation -= 3; dvp_relation -= 3; sa_strength += 25; sh_strength += 25; nationalism += 8; pacifism -= 2; 
 
-Our attempt to disband the military is met with fierce resistance and public protest. We are forced to abandon our attempt.
+However, our attempt to disband the military is met with fierce resistance and public protest. We are forced to abandon our approach.
 
 @reform
 subtitle: -1 budget
