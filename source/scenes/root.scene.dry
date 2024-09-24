@@ -7,14 +7,20 @@ new-page: true
 go-to: start_menu_2
 
 = Social Democracy: An Alternate History
+Two Steps Forward, One Leap Down Mod
 
 @start_menu_2
 
 - @start: Start game
 - @election_simulation: Election simulation
 - @credits: Credits
+- @modinfo: Mod info
 - @game_over.achievements
 
+@modinfo
+go-to: start_menu_2
+
+"Two Steps Forward, One Leap Down" is an unofficial mod that lets you push certain initiatives beyond their intended limit and/or attempt unwise radical actions. It is neither historically accurate nor an endorsement of anything displayed therein.
 
 @start
 on-arrival: {!
