@@ -1,0 +1,50 @@
+title: Preparing for the Olympics
+subtitle: Our athletes have worked hard...
+view-if: year = 1932 and month = 1 and 1932_olympics >= 1
+max-visits: 1
+tags: event
+new-page: true
+
+= Preparing for the Olympics
+
+The Games of the X Olympiad will be held this year in Los Angeles. Despite the ongoing Great Depression, countries from all over the world intend to take part in the competition, Germany among them.
+
+Thanks to our funding of their training, SPD athletes of Worker's Sports might be able to make it into the German team. This may be an opportunity to promote our party and the ideals of socialism on the international stage. 
+  
+- @ban: Tell them to stay home. A worker's place is with their comrades.
+- @goodluck: Wish them luck and let them compete on their merits.
+- @badluck: Wish them luck and let them compete on their merits.
+- @extra_train: Fund some last-minute intense training to improve their odds.
+- @corrupt: Pull strings to ensure that they get picked no matter what.
+
+@ban
+on-arrival: left_dissent += 4; labor_dissent += 4; center_dissent += 4; reformist_dissent += 4; neorevisionist_dissent += 4
+
+Our party members are disheartened by our sudden withdrawal of support for our athletes. 
+
+  
+@goodluck
+view_if: 1932_olympics >= 2
+on-arrival: 1932_olympics = 10; left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+
+Success! SPD athletes are overwhelmingly represented throughout the German Olympics team. Onward to Los Angeles and victory!
+
+@badluck
+view_if: 1932_olympics < 2 and 1932_olympics > 0
+on-arrival: 1932_olympics = 5; left_dissent -= 2; labor_dissent -= 2; center_dissent -= 2; reformist_dissent -= 2; neorevisionist_dissent -= 2
+
+Alas, only a few SPD athletes get picked for the Olympics team. Our party members cheer for them nonetheless.
+ 
+@extra_train
+choose-if: resource >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: 1932_olympics = 10; resources -=1; left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+
+Success! SPD athletes are overwhelmingly represented throughout the German Olympics team. Onward to Los Angeles and victory!
+
+@corrupt
+choose-if: interior_police_loyalty >= 0.75
+unavailable-subtitle: We are unable to acquire the blackmail material to make it happen.
+on-arrival: 1932_olympics = 15; interior_police_loyalty -=0.15; left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+
+Our agents in the interior police easily identify the corrupt members of the selection committee. Under the threat of exposing their dealings, they agree to handpick SPD athletes for the Olympic team. We can only hope that it will not backfire on us.
