@@ -12,6 +12,7 @@ Wels is the long-time chairman of the SPD. He is a gifted organizer and a member
 - @clear_agenda
 - @party_discipline
 - @emergency_fundraising
+- @quicktest
 - @root: Return to main
 
 @clear_agenda
@@ -28,7 +29,12 @@ if (Q.difficulty >= 0) {
 }
 !}
 
-All items from our agenda have been cleared.
+@quick_test
+title: Quick Test
+on_arrival: radicalism += 2
+go-to: unemployment_insurance_1
+
+Suddenly.
 
 @party_discipline
 title: Party Discipline
