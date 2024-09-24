@@ -16,6 +16,7 @@ In the midst of all this, our right-wing coalition partners in the DVP and Cente
 [? if unemployment_insurance_crisis = 2 : This is the second such ultimatum thrown by the Right. Obviously, the bourgeoisie are trying to remove us from the government. ?]
 
 - @tax_rich: Why can't we simply tax the rich?
+- @eat_rich: Why can't we simply EAT the rich?
 - @gift: This is a gift to the Communists.
 
 @tax_rich
@@ -23,6 +24,14 @@ max-visits: 1
 go-to: what_do
 
 The bourgeois parties, as representatives of the rich industrialists, would not have that.
+
+@tax_rich
+view-if: eat_the_rich = 0 and radicalism >= 2
+max-visits: 1
+on-arrival: eat_the_rich = 1; radicalism += 1
+go-to: what_do
+
+The bourgeois parties, as representatives of the rich industrialists, would not have that. Also, for some reason, most of society frowns on cannibalism.
 
 @gift
 go-to: what_do
