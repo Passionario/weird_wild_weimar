@@ -49,11 +49,11 @@ It is not enough for the SPD to solely be a political party. The Worker Singer's
 [? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
 
 @sports2
-view-if: cultural_organizations >= 4 and year <= 1931 and 1932_olympics <= 1
+view-if: cultural_organizations >= 2 and year <= 1931 and olympics <= 1
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 subtitles
-on-arrival: resources -= 1; cultural_organizations += 1; 1932_olympics += 1
+on-arrival: resources -= 1; cultural_organizations += 1; olympics += 1
 
 Thanks to our considerable investment in Worker's Sports, we can prepare our best athletes to be selected for the Olympics 1932 team. 
 
