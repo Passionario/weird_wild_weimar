@@ -31,6 +31,14 @@ Q.month = 1;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
+//Mod Events
+Q.1932_olympics = 0;
+Q.privatize_welfare = 0;
+Q.disband_military = 0;
+Q.catholic_strike = 0;
+Q.eat_the_rich = 0;
+Q.reichstag_burn = 0;
+
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
 Q.historical_mode = 0;
