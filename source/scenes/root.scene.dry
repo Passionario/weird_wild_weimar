@@ -32,7 +32,7 @@ Q.month = 1;
 Q.month_actions = 0;
 
 //Mod Events
-Q.1932_olympics = 0;
+Q.olympics = 0;
 Q.privatize_welfare = 0;
 Q.disband_military = 0;
 Q.catholic_strike = 0;
