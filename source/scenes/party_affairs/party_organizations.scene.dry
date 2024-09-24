@@ -14,6 +14,7 @@ In addition to being a political party, the SPD is a social world onto itself, w
 - @newspapers: Fund more newspapers and journalists.
 - @welfare: Fund more mutual aid and welfare programs.
 - @culture: Fund sports leagues, educational, and cultural programs.
+- @sports2: Fund the training of our athletes for the 1932 Olympics.
 - @rb: Fund the Reichsbanner, our self-defense organization.
 - @youth: We have the reputation of being a party for old men. Support the youth organizations.
 - @nothing: Do not increase funding for any program.
@@ -46,6 +47,15 @@ on-arrival: resources -= 1; cultural_organizations += 1; left_dissent -= 6; cent
 It is not enough for the SPD to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
 
 [? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
+
+@sports2
+view-if: cultural_organizations >= 4 and year <= 1931 and 1932_olympics <= 1
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources.
+subtitle: -1 subtitles
+on-arrival: resources -= 1; cultural_organizations += 1; 1932_olympics += 1
+
+Thanks to our considerable investment in Worker's Sports, we can prepare our best athletes to be selected for the Olympics 1932 team. 
 
 @rb
 choose-if: resources > 0
