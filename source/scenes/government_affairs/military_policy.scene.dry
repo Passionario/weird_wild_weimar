@@ -13,7 +13,7 @@ The Reichswehr is a deeply reactionary institution that has been generally hosti
 - @increase_funding: Increase funding for the military to purchase its loyalty.
 - @decrease_funding: Reduce funding for the military so we have more for social spending.
 - @reform: Conduct a thorough reform of the ranks, reducing the influence of reactionaries and making it more hospitable to us.
-- @disband_reichswehr: Declare total demilitarization and disband the military.
+- @disband_reichswehr
 - @root: No change to military policy.
 - @easy_discard
 
@@ -34,8 +34,10 @@ on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; reic
 The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
 
 @disband_reichswehr
+title: Declare total demilitarization and disband the military.
+view-if: disband_military = 0 and reichswehr_strength <= 0
 unavailable-subtitle: [? if nationalism >= 46 : Nationalism is too strong. ?] [? if pacifism <= 4 : There is insufficient support for pacifism. ?] [? if judicial_reform < 3 : The judiciary would never allow this. ?]
-choose-if: pacifism >= 5 and nationalism <= 45 and judicial_reform >= 2; 
+choose-if: pacifism > 4 and nationalism < 46 and judicial_reform > 2
 on-arrival: disband_military = 1; coalition_dissent += 2 if (in_grand_coalition or in_weimar_coalition); reichswehr_militancy = 0; reichswehr_loyalty = 0; left_dissent -= 20; center_dissent += 20; coup_progress += 2; reichswehr_goal_completed = 1; reichswehr_minister = "N/A"; reichswehr_minister_party = "N/A"; kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.1; sa_strength += 50; sh_strength += 50; west_relation += 3; east_relation += 3; reparations_negotiation += 5;
 
 Our attempt is successful and Reichswehr is no more! Our European neighbours praise our decision as the crowning moment of Pax Versailles. The centrists and reactionaries at home are fuming with terror and anger. 
