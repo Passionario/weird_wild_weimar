@@ -19,7 +19,7 @@ go-to: start_menu_2
 @modinfo
 go-to: start_menu_2
 
-"Two Steps Forward, One Leap Down" is an unofficial mod that lets you push certain initiatives beyond their intended limit and/or attempt unwise radical actions. It is neither historically accurate nor an endorsement of anything displayed therein.
+"Two Steps Forward, One Leap Below" is an unofficial mod that lets you push certain initiatives beyond their intended limit and/or attempt unwise radical actions. It is neither historically accurate nor an endorsement of anything displayed therein.
 
 @start
 on-arrival: {!
