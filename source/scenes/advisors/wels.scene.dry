@@ -33,14 +33,14 @@ if (Q.difficulty >= 0) {
 @quicktest
 title: Quick Test
 on_arrival: year = 1932; month = 1; olympics_readiness = 1
-go-to: olympics1
 
-Suddenly.
+Suddenly, Olympics!.
 
 @timetravel
 title: Travel to 1934
 on_arrival: year = 1934;
-go-to: 1933
+
+Suddenly, endgame!
 
 @party_discipline
 title: Party Discipline
