@@ -52,7 +52,7 @@ on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition +
 The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
 
 @america
-view-if: olympics_won <= 1
+view-if: olympics_won == 0
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
@@ -61,7 +61,7 @@ on-arrival: resources -= 1
 The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
 
 @america2
-view-if: olympics_won = 2
+view-if: olympics_won >= 1
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
