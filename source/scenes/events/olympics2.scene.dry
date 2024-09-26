@@ -11,9 +11,8 @@ The Games of the X Olympiad have started in Los Angeles. The German team is in a
 
 - @luck: Wish them luck!
 
-
 @luck
-on-arrival: olympics = 30;
+on-arrival: olympics = 30
 go-to: bigwin if olympics_readiness >= 3; mixedwin if olympics_readiness == 2 and olympics_team >= 3; midwin if olympics_readiness == 2 and olympics_team <= 2; smallwin if olympics_readiness == 1; disaster if olympics_readiness == 0;
 
 @bigwin
