@@ -15,6 +15,8 @@ The Games of the X Olympiad have started in Los Angeles. The German team is in a
 on-arrival: olympics = 30
 go-to: bigwin if olympics_readiness >= 3; mixedwin if olympics_readiness == 2 and olympics_team >= 3; midwin if olympics_readiness == 2 and olympics_team <= 2; smallwin if olympics_readiness == 1; disaster if olympics_readiness == 0;
 
+The competition is bound to be fierce, so we wish our comrades all the luck.
+
 @bigwin
 on-arrival: olympics = 100; olympics_won += 1; left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6; olympics_won += 1 if olympics_team >= 2; coalition_dissent -= 1; workers_spd += 3*olympics_team*(1-dissent); old_middle_spd += 2*olympics_team*(1-dissent); new_middle_spd += 2*olympics_team*(1-dissent); rural_spd += 2*olympics_team*(1-dissent); coup_progress -= 1 if coup_progress > 1
 achievement: olympiasiger
