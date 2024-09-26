@@ -381,7 +381,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if game_achievement_burgherburger: *Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if game_achievement_burgherburger: **Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
 
 
 
@@ -474,7 +474,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if achievement_burgherburger: *Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if achievement_burgherburger: **Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
 
 = Incomplete Achievements
 
@@ -564,7 +564,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if not achievement_burgherburger: *Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if not achievement_burgherburger: **Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
 
 @end_game
 game-over: true
