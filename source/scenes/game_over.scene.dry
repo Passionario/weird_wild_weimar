@@ -103,7 +103,7 @@ if (Q.eat_the_rich >= 2) {
     this.achieve("burgherburger");
 }
 // Untergang - kill Hitler
-if (Q.hitler_dead = 1) {
+if (Q.hitler_dead == 1) {
     this.achieve("untergang");
 }
 // Stolperstein - lose the civil war against Hitler.
