@@ -47,6 +47,7 @@ Alas, none of the SPD athletes get picked for the Olympics team. Our party membe
 @extra_train
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
+subtitle: -1 resources
 on-arrival: olympics_readiness += 1; resources -= 1
 go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1
 
