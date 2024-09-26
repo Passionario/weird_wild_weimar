@@ -45,9 +45,9 @@ on-arrival: olympics_team = 0; left_dissent += 2; labor_dissent += 2; center_dis
 Alas, none of the SPD athletes get picked for the Olympics team. Our party members are disheartened and question our lack of support for Worker's Sports.
 
 @extra_train
-choose-if: resource >= 1
+choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: olympics_readiness += 1;
+on-arrival: olympics_readiness += 1; resources -= 1
 go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1
 
 @corrupt
