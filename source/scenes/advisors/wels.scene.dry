@@ -32,7 +32,7 @@ if (Q.difficulty >= 0) {
 
 @quicktest
 title: Quick Test
-on_arrival: year = 1932; month = 1; olympics_readiness = 1
+on_arrival: year = 1932; month = 1; olympics_readiness = 2
 
 Suddenly, Olympics!.
 
