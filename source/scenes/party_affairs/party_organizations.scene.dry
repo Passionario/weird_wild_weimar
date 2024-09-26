@@ -42,20 +42,20 @@ We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : I
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; cultural_organizations += 1; left_dissent -= 6; center_dissent -= 6; labor_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+on-arrival: resources -= 1; cultural_organizations += 1; left_dissent -= 6; center_dissent -= 6; labor_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6; olympics += 1;
 
 It is not enough for the SPD to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
 
 [? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
 
 @sports2
-view-if: cultural_organizations >= 2 and year <= 1931 and olympics <= 1
+view-if: olympics >= 2 and year <= 1931 
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 subtitles
-on-arrival: resources -= 1; cultural_organizations += 1; olympics += 1; olympics_readiness += 1; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; reformist_dissent -= 3; neorevisionist_dissent -= 3
+on-arrival: resources -= 1; cultural_organizations += 1; olympics += 2; olympics_readiness += 1; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; reformist_dissent -= 3; neorevisionist_dissent -= 3
 
-Thanks to our considerable investment in Worker's Sports, we can prepare our best athletes for the 1932 Olympics team. 
+Thanks to our considerable investment in Worker's Sports, we can focus on preparing our best athletes for the 1932 Olympics. 
 
 @rb
 choose-if: resources > 0
