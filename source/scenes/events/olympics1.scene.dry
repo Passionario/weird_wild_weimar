@@ -1,6 +1,6 @@
 title: Preparing for the Olympics
 subtitle: Our athletes have worked hard...
-view-if: year = 1932 and month = 1 and olympics >= 1
+view-if: year = 1932 and month <= 1
 max-visits: 1
 tags: event
 new-page: true
@@ -9,7 +9,7 @@ new-page: true
 
 The Games of the X Olympiad will be held this year in Los Angeles. Despite the ongoing Great Depression, countries from all over the world intend to take part in the competition, Germany among them.
 
-Thanks to our funding of their training, SPD athletes of Worker's Sports [? if olympics_readiness == 0 : have a chance ?][? if olympics_readiness == 1 : might be able ?][? if olympics_readiness >= 2 : are sure to ?] make it into the German team. This may be an opportunity to promote our party and the ideals of socialism on the international stage. 
+[? if olympics == 0 : Despite our lack of ?][? if olympics >= 1 : Thanks to ?] our funding of their training, SPD athletes of Worker's Sports [? if olympics_readiness == 0 : have a chance ?][? if olympics_readiness == 1 : might be able ?][? if olympics_readiness >= 2 : are sure to ?] make it into the German team. This may be an opportunity to promote our party and the ideals of socialism on the international stage. 
   
 - @ban: Encourage them to stay home. A worker's place is with their comrades.
 - @luck: Wish them luck and let them compete on their merits.
