@@ -14,6 +14,7 @@ At the Labor and Socialist International, we can forge contacts with our fratern
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @comintern: Forget the second international - embed a spy in the Comintern's conference.
 - @america: Contact the Socialist party of America.
+- @america_olymp: Contact the Socialist party of America.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 
@@ -51,12 +52,24 @@ on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition +
 The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
 
 @america
+view-if: olympics_won <= 1
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
 
 The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+
+@america2
+view-if: olympics_won = 2
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; left_dissent -= 8; labor_dissent -= 8; center_dissent -= 8; neorevisionist_dissent -= 8; workers_spd += 6*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); kpd_relation += 5*(1-dissent);
+achievement: amerikanischen
+max-visits: 1
+
+The Socialist Party of America is swelling with new members who were inspired by our Olympian athletes' performance and impassioned speeches in support of socialism. They are extremely grateful to us, and promise full support once they become a force in US politics. Our party members are invigorated by this development.
 
 @reduce
 
