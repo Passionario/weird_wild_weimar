@@ -17,14 +17,14 @@ The Games of the X Olympiad have started in Los Angeles. The German team is in a
 @bigwin
 view-if: olympics_readiness >= 3
 on-arrival: olympics = 100; olympics_won += 2; left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6; olympics_won += 1 if olympics_team >= 2; coalition_dissent -= 1; workers_spd += 3*olympics_team*(1-dissent); old_middle_spd += 2*olympics_team*(1-dissent); new_middle_spd += 2*olympics_team*(1-dissent); rural_spd += 2*olympics_team*(1-dissent); coup_progress -= 1 if coup_progress > 1
-achievement: olympiasiger
+achievement: olympiasieger
 
 Our athletes are triumphant! As they step forward to receive their gold medals, they all speak out in support of socialism. Our popularity is greatly bolstered by this display of proletarian might on the world stage.
 
 @midwin
 view-if: olympics_readiness == 2 
 on-arrival: olympics_won += 1; left_dissent -= 3; labor_dissent -= 3; center_dissent -= 3; reformist_dissent -= 3; neorevisionist_dissent -= 3; workers_spd += 2*olympics_team*(1-dissent); old_middle_spd += olympics_team*(1-dissent); new_middle_spd += olympics_team*(1-dissent); rural_spd += olympics_team*(1-dissent)
-achievement: olympiasiger
+achievement: olympiasieger
 
 Our athletes make a strong showing. As they step forward to receive their silver and gold medals, they all speak out in support of socialism. Our popularity is buoyed by this display of proletarian strength on the world stage.
 
