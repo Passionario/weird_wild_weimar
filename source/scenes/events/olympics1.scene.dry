@@ -12,10 +12,7 @@ The Games of the X Olympiad will be held this year in Los Angeles. Despite the o
 Thanks to our funding of their training, SPD athletes of Worker's Sports [? if olympics_readiness == 0 : have a chance ?][? if olympics_readiness == 1 : might be able ?][? if olympics_readiness >= 2 : are sure to ?] make it into the German team. This may be an opportunity to promote our party and the ideals of socialism on the international stage. 
   
 - @ban: Encourage them to stay home. A worker's place is with their comrades.
-- @bestluck: Wish them luck and let them compete on their merits.
-- @goodluck: Wish them luck and let them compete on their merits.
-- @badluck: Wish them luck and let them compete on their merits.
-- @noluck: Wish them luck and let them compete on their merits.
+- @luck: Wish them luck and let them compete on their merits.
 - @extra_train: Fund some last-minute intense training to improve their odds.
 - @corrupt: Pull strings to ensure that they get picked no matter what.
 
