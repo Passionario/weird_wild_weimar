@@ -22,7 +22,7 @@ achievement: olympiasiger
 
 Our athletes are triumphant! As they step forward to receive their silver and gold medals, they all speak out in support of socialism. Our popularity is greatly bolstered by this display of proletarian might on the world stage.
 
-@mixedwin:
+@mixedwin
 on-arrival: olympics_won += 1;
 achievement: olympiasiger
 go-to: midwin
