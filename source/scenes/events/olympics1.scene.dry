@@ -25,7 +25,7 @@ Our party members are disheartened by our sudden withdrawal of support for our a
 go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1; noluck if olympics_readiness == 0
 
 @bestluck
-on-arrival: olympics_team = 3; left_dissent -= 8; labor_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; neorevisionist_dissent -= 8; workers_spd += 6*(1-dissent);
+on-arrival: olympics_team = 3; left_dissent -= 8; labor_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; neorevisionist_dissent -= 8; workers_spd += 6*(1-dissent)
 
 Success! SPD athletes are overwhelmingly represented throughout the German Olympics team. Onward to Los Angeles and victory!
   
@@ -48,10 +48,10 @@ Alas, none of the SPD athletes get picked for the Olympics team. Our party membe
 choose-if: resource >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: olympics_readiness += 1;
-go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1; 
+go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1
 
 @corrupt
-on-arrival: olympics_bribe = 1;
+on-arrival: olympics_bribe = 1
 go-to: corrupt_work if interior_police_loyalty >= 0.65; corrupt_fail if interior_police_loyalty < 0.65
 
 @corrupt_work
