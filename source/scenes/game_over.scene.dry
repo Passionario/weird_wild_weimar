@@ -102,6 +102,10 @@ if (Q.factory_takeovers >= 2) {
 if (Q.eat_the_rich >= 2) {
     this.achieve("burgherburger");
 }
+// Untergang - kill Hitler
+if (Q.hitler_dead = 1) {
+    this.achieve("untergang");
+}
 // Stolperstein - lose the civil war against Hitler.
 if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
@@ -142,7 +146,7 @@ Adolf Hitler has taken power in Germany. However, we have rallied the democratic
 
 
 @no_hitler
-view-if: chancellor != "Hitler" and president != "Hitler" and president != "Göring" and chancellor_party != "NSDAP"
+view-if: chancellor != "Hitler" and president != "Hitler" and president != "Göring" and chancellor_party != "NSDAP" and hitler_dead = 0
 title: Hitler does not yet control Germany...
 tags: endings
 go-to: eg_menu
@@ -151,14 +155,29 @@ Hitler does not yet control Germany. [? if chancellor == "Papen" : However, Chan
 
 [? if hitler_deported == 1 : We have deported Hitler back to Austria. Hopefully he will never return. ?]
 
+@dead_hitler
+view-if: hitler_dead = 1 and president != "Göring" and chancellor_party != "NSDAP" 
+title: Hitler is dead...
+tags: endings
+go-to: eg_menu
+
+Hitler is dead. [? if chancellor == "Papen" : However, Chancellor Papen's authoritarianism and far-right politics are paving the way for someone like Hitler to take power. ?] [? if chancellor == "Schleicher" : However, Chancellor Schleicher's authoritarianism and scheming is paving the way for someone like Hitler to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if chancellor == "Brüning" : However, Chancellor Brüning's austerity policies and the continuation of the depression are paving the way for someone like Hitler to take power. ?]
+
 @nsdap_win
-view-if: chancellor == "Goebbels" or president == "Göring"
+view-if: chancellor == "Goebbels" or president == "Göring" and hitler_dead = 0
 title: Despite the deportation of Hitler, the Nazis have still taken power...
 tags: endings
 go-to: eg_menu
 
 Despite the deportation of Hitler, the NSDAP has somehow still wormed its way into power. [? if long_war == 1 : We are fighting them for control of Germany. ?]
 
+@nsdap_win_dead
+view-if: chancellor == "Goebbels" or president == "Göring" and hitler_dead = 1
+title: Despite the death of Hitler, the Nazis have still taken power...
+tags: endings
+go-to: eg_menu
+
+Despite the death of Hitler, the NSDAP has somehow still wormed its way into power. [? if long_war == 1 : We are fighting them for control of Germany. ?]
 
 @civil_war_won
 title: We have won the civil war.
@@ -381,9 +400,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if game_achievement_burgherburger: **Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if game_achievement_burgherburger: **Bürgerburger** - supported cannibalism as a weapon of class warfare. ?]
 
+[? if game_achievement_untergang: **Untergang** - arranged Hitler's death. ?]
 
+[? if game_achievement_olympiasieger: **Olympiasieger** - brought home the gold from Los Angeles. ?]
+
+[? if game_achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empowered the Socialist Party of America. ?]
 
 = Completed Achievements Overall
 
@@ -474,7 +497,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if achievement_burgherburger: **Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if achievement_burgherburger: **Bürgerburger** - supported cannibalism as a weapon of class warfare. ?]
+
+[? if achievement_untergang: **Untergang** - arranged Hitler's death. ?]
+
+[? if achievement_olympiasieger: **Olympiasieger** - brought home the gold from Los Angeles. ?]
+
+[? if achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empowered the Socialist Party of America. ?]
 
 = Incomplete Achievements
 
@@ -564,7 +593,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if not achievement_burgherburger: **Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if not achievement_burgherburger: **Bürgerburger** - supported cannibalism as a weapon of class warfare. ?]
+
+[? if not achievement_untergang: **Untergang** - arranged Hitler's death. ?]
+
+[? if not achievement_olympiasieger: **Olympiasieger** - brought home the gold from Los Angeles. ?]
+
+[? if not achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empowered the Socialist Party of America. ?]
 
 @end_game
 game-over: true
