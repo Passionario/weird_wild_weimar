@@ -98,6 +98,12 @@ if ((Q.nationalization_progress >= 1 && Q.wtb_implemented >= 1) || (Q.wtb_implem
 if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
+
+// Burgherburger - encourage cannibalism
+if (Q.eat_the_rich >= 2) {
+    this.achieve("burgherburger");
+}
+
 // Stolperstein - lose the civil war against Hitler.
 if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
@@ -107,6 +113,7 @@ if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_l
     this.achieve('heidelberger_programm');
 }
 !}
+
 
 = End
 
@@ -376,6 +383,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
+[? if game_achievement_burgherburger: *Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
+
 
 
 = Completed Achievements Overall
@@ -467,6 +476,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
+[? if achievement_burgherburger: *Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
 
 = Incomplete Achievements
 
@@ -556,6 +566,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
+[? if not achievement_burgherburger: *Burgherburger** - supported cannibalism as a weapon of class warfare. ?]
 
 @end_game
 game-over: true
