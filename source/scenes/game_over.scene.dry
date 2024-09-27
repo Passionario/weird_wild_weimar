@@ -106,6 +106,10 @@ if (Q.eat_the_rich >= 2) {
 if (Q.hitler_dead == 1) {
     this.achieve("untergang");
 }
+// Roter Alarm Null - are time travellers trying to kill Hitler?
+if (Q.investigate_far_right >= 5) {
+    this.achieve("roter_alarm_null");
+}
 // Stolperstein - lose the civil war against Hitler.
 if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
@@ -400,13 +404,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if game_achievement_burgherburger: **Bürgerburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if game_achievement_burgherburger: **Bürgerburger** - support cannibalism as a weapon of class warfare. ?]
 
-[? if game_achievement_untergang: **Untergang** - arranged Hitler's death. ?]
+[? if game_achievement_untergang: **Untergang** - arrange Hitler's death. ?]
 
-[? if game_achievement_olympiasieger: **Olympiasieger** - brought home the gold from Los Angeles. ?]
+[? if game_achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
-[? if game_achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empowered the Socialist Party of America. ?]
+[? if game_achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
+
+[? if game_achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
 
 = Completed Achievements Overall
 
@@ -497,13 +503,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if achievement_burgherburger: **Bürgerburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if achievement_burgherburger: **Bürgerburger** - support cannibalism as a weapon of class warfare. ?]
 
-[? if achievement_untergang: **Untergang** - arranged Hitler's death. ?]
+[? if achievement_untergang: **Untergang** - arrange Hitler's death. ?]
 
-[? if achievement_olympiasieger: **Olympiasieger** - brought home the gold from Los Angeles. ?]
+[? if achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
-[? if achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empowered the Socialist Party of America. ?]
+[? if achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
+
+[? if achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
 
 = Incomplete Achievements
 
@@ -593,13 +601,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
-[? if not achievement_burgherburger: **Bürgerburger** - supported cannibalism as a weapon of class warfare. ?]
+[? if not achievement_burgherburger: **Bürgerburger** - support cannibalism as a weapon of class warfare. ?]
 
-[? if not achievement_untergang: **Untergang** - arranged Hitler's death. ?]
+[? if not achievement_untergang: **Untergang** - arrange Hitler's death. ?]
 
-[? if not achievement_olympiasieger: **Olympiasieger** - brought home the gold from Los Angeles. ?]
+[? if not achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
-[? if not achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empowered the Socialist Party of America. ?]
+[? if not achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
+
+[? if not achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
 
 @end_game
 game-over: true
