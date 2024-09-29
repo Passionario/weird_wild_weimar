@@ -41,8 +41,11 @@ Q.olympics_won = 0;
 Q.usa_soc = 0;
 Q.privatize_welfare = 0;
 Q.disband_military = 0;
+Q.disband_police = 0;
+Q.world_war_two = 0;
 Q.catholic_strike = 0;
 Q.eat_the_rich = 0;
+Q.rich_eaten = 0;
 Q.reichstag_burn = 0;
 Q.hitler_dead = 0;
 
