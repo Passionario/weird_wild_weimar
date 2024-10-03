@@ -613,7 +613,7 @@ No saving, no loading, no discarding, no fundraising, no mercy. We hope you know
 
 @more_info
 subtitle: WIP, not implemented yet
-choose-if: year == 2025
+choose-if: year = 2025
 on-arrival: infodump = 1;
 go-to: difficulty_choice
 
@@ -630,27 +630,27 @@ Now, choose your difficulty:
 - @1928_nightmare: Begin (nightmare difficulty)
 
 @1928_test
-subtitle: [? if infodump == 1 : REMOVE THIS BEFORE RELEASE. ?]
+subtitle: [? if infodump >= 1 : REMOVE THIS BEFORE RELEASE. ?]
 on-arrival: difficulty = -1; resources = 99; dues = 4; budget = 99; rb_strength = 9000; rb_militancy = 10; kpd_relation = 99; z_relation = 99; dvp_relation = 99;
 go-to: 1928_main
 
 @1928_easy
-subtitle: [? if infodump == 1 : More resources, good relations, free leadership changes. ?]
+subtitle: [? if infodump >= 1 : More resources, good relations, free leadership changes. ?]
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49;
 go-to: 1928_main
 
 @1928_normal
-subtitle: [? if infodump == 1 : Default resources and relations. ?]
+subtitle: [? if infodump >= 1 : Default resources and relations. ?]
 on-arrival: difficulty = 0; 
 go-to: 1928_main
 
 @1928_hard
-subtitle: [? if infodump == 1 : No resources, bad relations, moderate dissent. ?]
+subtitle: [? if infodump >= 1 : No resources, bad relations, moderate dissent. ?]
 on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31;
 go-to: 1928_main
 
 @1928_nightmare
-subtitle: [? if infodump == 1 : No resources, no fundraising, everyone hates you. ?][? Not implemented yet. ?]
+subtitle: [? if infodump >= 1 : No resources, no fundraising, everyone hates you. ?] Not implemented yet.
 choose-if: year == 2025
 on-arrival: {!
 Q.difficulty = 2;
