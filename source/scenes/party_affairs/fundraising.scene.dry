@@ -31,7 +31,7 @@ Our current members appreciate this, but no one decides to join a party because 
 
 @abolish
 subtitle: No more fundraising. People might like that.
-choose-if: dues == 1
+view-if: dues == 1
 on-arrival: dues = 0; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8; unemployed_spd += 12*(1-dissent)
 
 Our current members appreciate this, and many unemployed people who previously could not afford membership decide to join the party.
