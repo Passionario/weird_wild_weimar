@@ -31,6 +31,9 @@ Q.month = 1;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
+//Mod Stuff
+Q.infodump = 0;
+
 //Mod Events
 // Olympics: 0 = unready, 1 = half-ready, 2 = ready
 Q.olympics = 0;
@@ -582,47 +585,99 @@ new-page: true
 
  - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
 
-This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
+This is a game of alternate history. While historical accuracy is a major concern for some, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe, *particularly since you're playing an unofficial modded version that prioritizes experimentation over historical veracity*.
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1928_test: Begin (sandbox mode)
-- @1928_easy: Begin (normal difficulty)
-- @1928_main: Begin (hard difficulty)
-- @1928_hard: Begin (nightmare difficulty)
-- @1928_historical: Begin (hardcore mode)
+How transparent and flexible should your choices and consequences be?
+
+- @normal_info: Normal (same as base game)
+- @limit_info: Limited (same as historical mode)
+- @more_info: Augmented (extra feedback)
+
+@normal_info
+on-arrival: infodump = 0;
+go-to: difficulty_choice
+
+You will be provided with regular insights to inform your decisions.
+
+@limit_info
+on-arrival: {!
+Q.historical_mode = 1;
+Q.infodump = -1;
+this.state.disableSaves = true;
+!}
+go-to: difficulty_choice
+
+No saving, no loading, no discarding, no fundraising, no mercy. We hope you know what you're doing.
+
+@more_info
+on-arrival: infodump = 1;
+go-to: difficulty_choice
+
+You will have additional insights to guide your decisions.
+
+@difficulty_choice
+
+Now, choose your difficulty:
+
+- @1928_test: Begin (PLAYTEST MODE)
+- @1928_easy: Begin (easy difficulty)
+- @1928_normal: Begin (normal difficulty)
+- @1928_hard: Begin (hard difficulty)
+- @1928_nightmare: Begin (nightmare difficulty)
 
 @1928_test
-on-arrival: difficulty = -1; resources = 24; dues = 10; budget = 10; rb_strength = 2500; kpd_relation = 49; z_relation = 74; dvp_relation = 69;
+subtitle: [? if infodump == 1 : REMOVE THIS BEFORE RELEASE. ?]
+on-arrival: difficulty = -1; resources = 99; dues = 4; budget = 99; rb_strength = 9000; rb_militancy = 10; kpd_relation = 99; z_relation = 99; dvp_relation = 99;
 go-to: 1928_main
 
 @1928_easy
+subtitle: [? if infodump == 1 : More resources, good relations, free leadership changes. ?]
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49;
 go-to: 1928_main
 
+@1928_normal
+subtitle: [? if infodump == 1 : Default resources and relations. ?]
+on-arrival: difficulty = 0; 
+go-to: 1928_main
+
 @1928_hard
+subtitle: [? if infodump == 1 : No resources, bad relations, moderate dissent. ?]
 on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31;
 go-to: 1928_main
 
-@1928_historical
-subtitle: No save/load, no polls, no discards. For veterans. 
+@1928_nightmare
+subtitle: [? if infodump == 1 : No resources, no fundraising, everyone hates you. ?]
 on-arrival: {!
 Q.difficulty = 2;
-Q.historical_mode = 1;
-Q.resources = 2;
-Q.dues = 1;
-Q.rb_strength = 2000;
-Q.reformist_dissent = 25;
-Q.left_dissent = 30;
-Q.labor_dissent = 25;
-Q.center_dissent = 25;
-Q.z_relation = 41;
-Q.kpd_relation = 16;
-Q.dvp_relation = 31;
-Q.budget = 2;
-this.state.disableSaves = true;
+Q.resources = 0;
+Q.dues = 0;
+Q.unemployed += 3;
+Q.inflation -= 1;
+Q.rb_strength = 600;
+Q.reformist_dissent = 48;
+Q.left_dissent = 48;
+Q.labor_dissent = 48;
+Q.center_dissent = 45;
+Q.z_relation = 26;
+Q.kpd_relation = 11;
+Q.dvp_relation = 26;
+Q.budget = 0;
+Q.new_middle_nsdap += 10;
+Q.old_middle_nsdap += 10;
+Q.new_middle_ddp -= 5;
+Q.new_middle_dvp -= 5;
+Q.workers_kpd += 5;
+Q.sa_strength += 90;
+Q.sh_strength += 150;
+Q.rural_dnvp -= 15;
+Q.rural_nsdap += 10;
+Q.unemployed_nsdap += 18;
 !}
 go-to: 1928_main
+
+Good luck. You're gonna need it.
 
 @1928_main
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/LiedDerPompadour.mp3
