@@ -12,8 +12,6 @@ Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an 
 
 - @homosexual_rights_
 - @womens_rights_
-- @quicktest
-- @timetravel
 - @root: Return to main
 
 
@@ -33,16 +31,3 @@ choose-if: advisor_action_timer = 0 and spd_in_government
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?]
 on-arrival: advisor_action_timer = 6; womens_rights_timer -= 10
 go-to: womens_rights
-
-@quicktest
-title: Quick Test RTB 
-on_arrival: interior_police_loyalty += 0.2; coup_progress += 5; investigate_far_right += 3;
-
-On your left!
-
-
-@timetravel
-title: Travel to 1934
-on_arrival: year = 1934;
-
-Suddenly, endgame!
