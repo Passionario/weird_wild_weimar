@@ -36,7 +36,7 @@ The police have historically been overrun with reactionaries, and we are trying 
 Current police loyalty: [+ prussian_police_loyalty : loyalty +].
 
 @police_strength
-on-arrival: prussian_police_strength += 20; prussian_police_strength *= 1.2; prussian_police_loyalty += 0.05
+on-arrival: prussian_police_strength += 20; prussian_police_strength *= 1.1; prussian_police_loyalty += 0.025
 
 We have increased the size of the Prussian police. [? if prussian_police_strength >= 200 and prussian_police_strength < 500: It is now a substantial force. ?][? if prussian_police_strength >= 500: It is now a force to be reckoned with. ?]
 
