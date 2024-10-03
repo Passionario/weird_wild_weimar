@@ -612,6 +612,8 @@ go-to: difficulty_choice
 No saving, no loading, no discarding, no fundraising, no mercy. We hope you know what you're doing.
 
 @more_info
+subtitle: WIP, not implemented yet
+choose-if: year == 2025
 on-arrival: infodump = 1;
 go-to: difficulty_choice
 
@@ -648,7 +650,8 @@ on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformi
 go-to: 1928_main
 
 @1928_nightmare
-subtitle: [? if infodump == 1 : No resources, no fundraising, everyone hates you. ?]
+subtitle: [? if infodump == 1 : No resources, no fundraising, everyone hates you. ?][? Not implemented yet. ?]
+choose-if: year == 2025
 on-arrival: {!
 Q.difficulty = 2;
 Q.resources = 0;
