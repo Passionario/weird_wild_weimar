@@ -12,8 +12,6 @@ Wels is the long-time chairman of the SPD. He is a gifted organizer and a member
 - @clear_agenda
 - @party_discipline
 - @emergency_fundraising
-- @quicktest
-- @timetravel
 - @root: Return to main
 
 @clear_agenda
@@ -29,18 +27,6 @@ if (Q.difficulty >= 0) {
     window.dendryUI.dendryEngine.state.currentHands['main.main_easy'] = [];
 }
 !}
-
-@quicktest
-title: Quick Test
-on_arrival: year = 1931; month = 12; olympics_readiness += 2;
-
-Suddenly, Olympics!.
-
-@timetravel
-title: Travel to 1934
-on_arrival: year = 1934;
-
-Suddenly, endgame!
 
 @party_discipline
 title: Party Discipline
