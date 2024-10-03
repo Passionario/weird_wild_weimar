@@ -586,10 +586,10 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1928_test: Begin (TEST MODE)
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
+- @1928_test: Begin (sandbox mode)
+- @1928_easy: Begin (normal difficulty)
+- @1928_main: Begin (hard difficulty)
+- @1928_hard: Begin (nightmare difficulty)
 - @1928_historical: Begin (hardcore mode)
 
 @1928_test
@@ -605,7 +605,7 @@ on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformi
 go-to: 1928_main
 
 @1928_historical
-subtitle: No saving/loading. All choices are opaque, irreversible, and subject to historical limitations. For veteran players who want a challenge. 
+subtitle: No save/load, no polls, no discards. For veterans. 
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
