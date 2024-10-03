@@ -31,19 +31,19 @@ view-if: prussian_police_loyalty < 1
 on-arrival: prussian_police_loyalty += 0.1
 
 # increase police loyalty
-The police have historically been overrun with reactionaries, and we are trying to change this, little by little. We have improved the training and recruitment process to select for a broader demographic than the traditional conservatives, and to put a tighter leash on their political activity. In addition, we set up committees to investigate the ranks of the police and remove those with far-right sympathies. It is a slow and arduous work.
+The police have historically been overrun with reactionaries, and we are trying to change this, little by little. [? if prussian_police_loyalty >= 0.65: We have improved the training and recruitment process to select for a broader demographic than the traditional conservatives, and to put a tighter leash on their political activity. ?] [? if prussian_police_loyalty >= 0.75: In addition, we set up committees to investigate the ranks of the police and remove those with far-right sympathies. ?] It is a slow and arduous work[? if prussian_police_loyalty >= 0.85:  , but one that continues to bear fruit ?].
 
 Current police loyalty: [+ prussian_police_loyalty : loyalty +].
 
 @police_strength
-on-arrival: prussian_police_strength += 20
+on-arrival: prussian_police_strength += 20; prussian_police_strength *= 1.2; prussian_police_loyalty += 0.05
 
-We have increased the size of the Prussian police.
+We have increased the size of the Prussian police. [? if prussian_police_strength >= 200 and prussian_police_strength < 500: It is now a substantial force. ?][? if prussian_police_strength >= 500: It is now a force to be reckoned with. ?]
 
 @bureaucracy
 on-arrival: prussian_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
-The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
+[? if democratization <= 3: The bureaucracy is deeply reactionary, and most blatantly abuse their power to favor the political right ?][? if democratization == 3: The bureaucracy struggles to remain reactionary, and many continue to abuse their power to favor the political right ?][? if democratization >= 3: The reactionaries are slowly losing their grasp on the bureaucracy. Abuses of power have become more rare, or at least the offenders have gotten better at hiding them ?]. By removing the pro-monarchy and pro-dictatorship elements, we can [? if democratization >= 3: continue to ?] democratize it and move public consensus to recognize the value of world peace. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
@@ -78,7 +78,7 @@ The ban is enthusiastically carried out by the police, perhaps too enthusiastica
 
 @unban_rfb
 view-if: rfb_banned = 1
-on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1
+on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1; kpd_relation += 5
 
 The Communist RFB is no longer banned.
 
