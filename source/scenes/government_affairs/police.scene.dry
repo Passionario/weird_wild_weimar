@@ -60,7 +60,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 
 
 @investigate_far_left
-go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and coup_progress >= 6 and investigate_far_right >= 3); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_nothing if (coup_progress < 7 or investigate_far_right < 3)
+go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and coup_progress >= 5 and investigate_far_right >= 3); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_nothing if (coup_progress < 5 or investigate_far_right < 3)
 
 @investigate_far_left_falseflag
 on-arrival: reichstag_burn = 1; sa_strength -= 60; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; workers_kpd += 5; workers_spd += 3*(1-dissent); kpd_relation += 6
