@@ -14,8 +14,6 @@ Hilferding is an economist and a disciple of Karl Kautsky. Originating from Vien
 - @toleration
 - @finance_ministry_
 - @economic_democracy_
-- @quicktest
-- @timetravel
 - @root: Return to main
 
 @against_right_and_left
@@ -36,17 +34,6 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent
 
 We have reduced dissent among the anti-toleration factions.
 
-@quicktest
-title: Quick Test RTB 
-on_arrival: interior_police_loyalty += 0.2; coup_progress += 5; investigate_far_right += 3;
-
-On your left!
-
-@timetravel
-title: Travel to 1934
-on_arrival: year = 1934;
-
-Suddenly, endgame!
 
 @finance_ministry_
 title: Fiscal Policy
