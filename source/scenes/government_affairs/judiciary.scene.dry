@@ -8,12 +8,13 @@ tags: govt_affairs
 
 = Judiciary Reform
 
-The Judiciary is one of the most reactionary components of the government, along with the military. Many jurists have held office since the days of the Emperor. They give violent fascists like Adolf Hitler laughably light sentences, while ruthlessly persecuting leftists and pacifists for lesser crimes.
+The Judiciary is one of the most reactionary components of the government, along with the military. Many jurists have held office since the days of the Emperor. They give violent fascists like Adolf Hitler laughably light sentences, while ruthlessly persecuting leftists and pacifists for lesser crimes. Others are mercenary opportunists whose loyalties are open to the highest bidder.
 
-There is great demand in our membership for reforming the judiciary, although this may bring us into a collision course with our coalition allies.
+There is great demand in our membership for reforming the judiciary, although this may bring us into a collision course with our coalition allies - or the other way around, depending on our approach.
 
-- @reform: Carry out substantial judicial reforms,
+- @reform: Carry out substantial judicial reforms.
 - @minor_reforms: Carry out minor judicial reforms.
+- @make_worse: Take advantage of rampant corruption.
 - @as_is: Leave the judiciary as it is.
 - @easy_discard
 
@@ -29,6 +30,14 @@ We investigate jurists who have shown themselves to have biased or corrupt behav
 on-arrival: democratization += 1; workers_spd += 3*(1-dissent) if democratization >= 3; judicial_reform += 1; pro_republic += 3*(1-dissent); judiciary_timer += 6
 
 We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
+
+@make_worse
+subtitle: -1 resources
+unavailable-subtitle: Not enough resources.
+choose-if: resources >= 1
+on-arrival: resources -= 1; democratization -= 2; coalition_dissent -= 1 if in_grand_coalition == 1; workers_spd -= 5; judicial_reform -= 1; pro_republic -= 4; coup_progress -= 1
+
+We investigate the most corrupt jurists and make discreet contributions to ensure that their rulings are favorable to us and our coalition allies.
 
 @as_is
 go-to: root
