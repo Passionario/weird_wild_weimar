@@ -17,12 +17,10 @@ A Great War veteran and a neorevisionist leader, Kurt Schumacher argues for a st
 @emergency_fundraising
 title: Emergency Fundraising
 subtitle: An emergency infusion of resources.
+view-if: difficulty < 3 and dues > 1
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; resources += dues
-#view-if: difficulty < 1
-
-# Schumacher's emergency fundraising is available on all difficulties.
 
 We have gained +[+ dues +] resources.
 
