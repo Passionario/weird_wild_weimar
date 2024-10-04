@@ -110,8 +110,8 @@ if (Q.hitler_dead == 1) {
 if (Q.investigate_far_right >= 5) {
     this.achieve("roter_alarm_null");
 }
-// Sind wir die Bösen? - be responsible for Blutmai and Altona Blood Sunday
-if (Q.blutmai and Q.altona_guilt) {
+// Sind wir die Bösen - be responsible for Blutmai and Altona Blood Sunday
+if (Q.blutmai && Q.altona_guilt) {
     this.achieve("sind_wir_die_bosen");
 }
 // Fehlende Zündung - prevent the Reichstag fire plot
