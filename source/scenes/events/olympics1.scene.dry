@@ -22,7 +22,7 @@ on-arrival: olympics_team = 0; left_dissent += 4; labor_dissent += 4; center_dis
 Our party members are disheartened by our sudden withdrawal of support for our athletes. 
 
 @luck
-go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1; noluck if olympics_readiness == 0
+go-to: bestluck if olympics_readiness >= 4; goodluck if olympics_readiness == 3; badluck if olympics_readiness <= 2 and olympics_readiness >= 1; noluck if olympics_readiness == 0
 
 @bestluck
 on-arrival: olympics_team = 3; left_dissent -= 8; labor_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; neorevisionist_dissent -= 8; workers_spd += 6*(1-dissent)
@@ -32,7 +32,7 @@ Success! SPD athletes are overwhelmingly represented throughout the German Olymp
 @goodluck
 on-arrival: olympics_team = 2; left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
 
-Success! SPD athletes are represented in the German Olympics team. Onward to Los Angeles and victory!
+Success! SPD athletes are well represented in the German Olympics team. Onward to Los Angeles and victory!
 
 @badluck
 on-arrival: olympics_team = 5; left_dissent -= 2; labor_dissent -= 2; center_dissent -= 2; reformist_dissent -= 2; neorevisionist_dissent -= 2
@@ -48,10 +48,12 @@ Alas, none of the SPD athletes get picked for the Olympics team. Our party membe
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: olympics_readiness += 1; resources -= 1
-go-to: bestluck if olympics_readiness >= 3; goodluck if olympics_readiness == 2; badluck if olympics_readiness == 1
+on-arrival: olympics_readiness += 2; resources -= 1
+go-to: bestluck if olympics_readiness >= 4; goodluck if olympics_readiness == 3; badluck if olympics_readiness == 2
 
 @corrupt
+choose-if: corrupt_interior >= 1
+unavailable-subtitle: To be implemented in Corruption update.
 on-arrival: olympics_bribe = 1
 go-to: corrupt_work if interior_police_loyalty >= 0.65; corrupt_fail if interior_police_loyalty < 0.65
 
