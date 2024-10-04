@@ -111,11 +111,11 @@ if (Q.investigate_far_right >= 5) {
     this.achieve("roter_alarm_null");
 }
 // Sind wir die Bösen? - be responsible for Blutmai and Altona Blood Sunday
-if (Q.blutmai >= 1 and Q.altona_guild >=1) {
+if (Q.blutmai and Q.altona_guilt) {
     this.achieve("sind_wir_die_bosen");
 }
 // Fehlende Zündung - prevent the Reichstag fire plot
-if (Q.reichstag_burn >= 1) {
+if (Q.reichstag_burn) {
     this.achieve("fehlende_zundung");
 }
 // Stolperstein - lose the civil war against Hitler.
