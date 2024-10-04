@@ -40,12 +40,10 @@ Q.privatize_welfare = 0;
 Q.disband_police = 0;
 Q.eat_the_rich = 0;
 Q.rich_eaten = 0;
-Q.military_rearmed = 0;
-Q.police_rb_train = 0;
-Q.police_rb_team = 0;
-Q.military_rb = 0;
-Q.if_rb_team = 0;
-Q.rfd_rb_team = 0;
+Q.corrupt_judiciary = 0;
+Q.corrupt_prussian_police = 0;
+Q.corrupt_interior = 0;
+Q.altona_guilt = 0;
 
 // Implemented Mod Stuff
 Q.olympics = 0;
@@ -56,7 +54,12 @@ Q.olympics_won = 0;
 Q.usa_soc = 0;
 Q.disband_military = 0;
 Q.reichstag_burn = 0;
-
+Q.military_rearmed = 0;
+Q.police_rb_train = 0;
+Q.police_rb_team = 0;
+Q.military_rb = 0;
+Q.if_rb_team = 0;
+Q.rfd_rb_team = 0;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
