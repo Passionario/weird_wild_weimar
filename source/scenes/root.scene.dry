@@ -43,7 +43,7 @@ Q.rich_eaten = 0;
 Q.corrupt_judiciary = 0;
 Q.corrupt_prussian_police = 0;
 Q.corrupt_interior = 0;
-Q.altona_guilt = 0;
+Q.spd_total_corruption = 0;
 
 // Implemented Mod Stuff
 Q.olympics = 0;
@@ -60,6 +60,7 @@ Q.police_rb_team = 0;
 Q.military_rb = 0;
 Q.if_rb_team = 0;
 Q.rfd_rb_team = 0;
+Q.altona_guilt = 0;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
