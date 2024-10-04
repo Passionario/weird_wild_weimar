@@ -46,7 +46,7 @@ When the march arrives in Altona, they are immediately confronted by an angry cr
 @allow_no_police_ambush
 view-if: rb_militancy >= 0.5
 subtitle: This will end badly for everyone involved.
-on-arrival: sa_strength -= 50; rfb_strength -= 50; rb_strength -= 50; strife += 2; kpd_relation -= 12; communist_coalition -= 1; kpd_coalition_dissent -= 1; coalition_dissent -=1; left_dissent += 10
+on-arrival: sa_strength -= 50; rfb_strength -= 50; rb_strength -= 50; strife += 2; kpd_relation -= 12; communist_coalition -= 1; kpd_coalition_dissent -= 1; coalition_dissent -=1; left_dissent += 10; altona_guilt += 1
 
 We put our snipers in position and wait. When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis, including several incendiary bottles thrown by our provocateurs. Gunshots are heard from our rooftop snipers. In response, the SA attempt to engage the surrounding crowd and return fire at the surrounding buildings. Hundreds are killed, half of them civilians. In the chaos, our snipers managed to get away without being caught.
 
