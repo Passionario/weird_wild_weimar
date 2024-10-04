@@ -66,7 +66,7 @@ view-if: reichswehr_loyalty >= 0.5 and reichswehr_militancy >= 1
 on-arrival: rb_militancy += 0.15; reichswehr_militancy -= 0.15 if military_rearmed <= 0; reichswehr_loyalty -= 0.1 if military_rearmed <= 0; sa_strength += 50; military_rb += 1; kpd_relation -= 5; dvp_relation -= 5; z_relation -= 5; z_relation -= 5 if historical_mode; coalition_dissent += 1; kpd_coalition_dissent += 1; pro_republic -= 5; pacifism -= 2; coup_progress += 1;
 max-visits: 1
 
-Somehow, [? if military_rearmed >= 1: some of the newly manufactured ?] military equipment keeps vanishing from storehouses and ending up in the hands of our activists. Our loyalists in Reichswehr turn a blind eye, while everyone else decries our abuse of power.
+Some of the [? if military_rearmed >= 1: recently manufactured ?] military equipment has inexplicably vanished from Reichswehr storehouses and ended up in the hands of our activists. Our loyalists in Reichswehr turn a blind eye, while everyone else decries our corruption and abuse of power.
 
 @peace
 on-arrival: rb_militancy -= 0.02; rb_strength -= 50; pacifism += 1
