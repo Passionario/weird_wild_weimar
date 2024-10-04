@@ -110,6 +110,14 @@ if (Q.hitler_dead == 1) {
 if (Q.investigate_far_right >= 5) {
     this.achieve("roter_alarm_null");
 }
+// Sind wir die Bösen? - be responsible for Blutmai and Altona Blood Sunday
+if (Q.blutmai >= 1 and Q.altona_guild >=1) {
+    this.achieve("sind_wir_die_bosen");
+}
+// Fehlende Zündung - prevent the Reichstag fire plot
+if (Q.reichstag_burn >= 1) {
+    this.achieve("fehlende_zundung");
+}
 // Stolperstein - lose the civil war against Hitler.
 if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
@@ -410,6 +418,10 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
+[? if game_achievement_sind_wir_die_bosen: **Sind wir die Bösen?** - be responsible for Blutmai and Altona Bloody Sunday ?]
+
+[? if game_achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire plot ?]
+
 [? if game_achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
 [? if game_achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
@@ -509,6 +521,10 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
+[? if achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire plot ?]
+
+[? if achievement_sind_wir_die_bosen: **Sind wir die Bösen?** - be responsible for Blutmai and Altona Bloody Sunday ?]
+
 [? if achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
 [? if achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
@@ -606,6 +622,10 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 [? if not achievement_untergang: **Untergang** - arrange Hitler's death. ?]
 
 [? if not achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
+
+[? if not achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire plot ?]
+
+[? if not achievement_sind_wir_die_bosen: **Sind wir die Bösen?** - be responsible for Blutmai and Altona Bloody Sunday ?]
 
 [? if not achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
