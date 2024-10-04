@@ -529,6 +529,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
 
+[? if (achievement_roter_alarm_null and achievement_amerikanischen and achievement_fehlende_zundung and achievement_sind_wir_die_bosen and achievement_olympiasieger and achievement_untergang and achievement_burgherburger): **Lasst uns diese Scheiße in Grund und Boden laufen lassen!** - over multiple playthroughs, complete all other achievements of the 'Two Steps Forward, One Leap Below' mod. ?]
+
 = Incomplete Achievements
 
 [? if not achievement_eiserne_front : **Eiserne Front** - form the Iron Front. ?]
@@ -630,6 +632,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 [? if not achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
 [? if not achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
+
+[? if not (achievement_roter_alarm_null and achievement_amerikanischen and achievement_fehlende_zundung and achievement_sind_wir_die_bosen and achievement_olympiasieger and achievement_untergang and achievement_burgherburger): **Lasst uns diese Scheiße in Grund und Boden laufen lassen!** - over multiple playthroughs, complete all other achievements of the 'Two Steps Forward, One Leap Below' mod. ?]
 
 @end_game
 game-over: true
