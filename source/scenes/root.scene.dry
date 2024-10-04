@@ -31,26 +31,32 @@ Q.month = 1;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
-//Mod Stuff
+//Unimplemented Mod Stuff
 Q.infodump = 0;
+Q.hitler_dead = 0;
+Q.world_war_two = 0;
+Q.catholic_strike = 0;
+Q.privatize_welfare = 0;
+Q.disband_police = 0;
+Q.eat_the_rich = 0;
+Q.rich_eaten = 0;
+Q.military_rearmed = 0;
+Q.police_rb_train = 0;
+Q.police_rb_team = 0;
+Q.military_rb = 0;
+Q.if_rb_team = 0;
+Q.rfd_rb_team = 0;
 
-//Mod Events
-// Olympics: 0 = unready, 1 = half-ready, 2 = ready
+// Implemented Mod Stuff
 Q.olympics = 0;
 Q.olympics_readiness = 0;
 Q.olympics_team = 0;
 Q.olympics_bribe = 0;
 Q.olympics_won = 0;
 Q.usa_soc = 0;
-Q.privatize_welfare = 0;
 Q.disband_military = 0;
-Q.disband_police = 0;
-Q.world_war_two = 0;
-Q.catholic_strike = 0;
-Q.eat_the_rich = 0;
-Q.rich_eaten = 0;
 Q.reichstag_burn = 0;
-Q.hitler_dead = 0;
+
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
