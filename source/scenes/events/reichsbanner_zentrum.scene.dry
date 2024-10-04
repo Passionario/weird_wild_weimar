@@ -1,8 +1,9 @@
 title: Exodus from the Reichsbanner
-subtitle: Owing to its militarization, he Center Party and DDP are leaving the Reichsbanner.
-view-if: rb_militancy >= 0.2 and not rb_exit and not rb_stay
+subtitle: Owing to its militarization, the Center Party and DDP are leaving the Reichsbanner.
+view-if: rb_militancy >= 0.3 and not rb_exit and not rb_stay 
 new-page: true
 tags: event
+max-visits: 1
 
 = Exodus from the Reichsbanner
 
