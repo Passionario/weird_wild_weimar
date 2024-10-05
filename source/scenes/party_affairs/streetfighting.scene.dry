@@ -12,8 +12,8 @@ Battles rage on the streets between the Nazi SA, nationalist Stahlhelm, communis
 
 We must do something to protect the workers against these predations.
 
-#- @test_battle: Test our defense units in battle against the fascists!
-#- @break_sa_rally: Send our units to disrupt SA rallies!
+- @test_battle: Test our defense units in battle against the fascists!
+- @break_sa_rally: Send our strongest units to disrupt Nazi rallies!
 - @arm_rb: Increase training and armaments for the Reichsbanner.
 - @if_training: Train union members to fight as part of the Iron Front.
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
@@ -26,10 +26,29 @@ We must do something to protect the workers against these predations.
 
 @test_battle
 view-if: rb_militancy > 0.1 and rb_militancy < 0.5
-on-arrival: rb_militancy += 0.1; sa_strength += 40; rb_strength -= 100; strife += 1
+on-arrival: rb_militancy += 0.1; sa_strength += 90; rb_strength -= 100; strife += 1; spd_hostile += 1
 max-visits: 1
 
 Many Reichsbanner members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provide ample recruiting material for the Nazi SA.
+
+@break_sa_rally
+view-if: rb_militancy >= 0.5
+on-arrival: strife += 1; spd_hostile += 1; our_strength = rb_strength*rb_militancy*(1-dissent); enemy_strength = sa_strength*sa_militancy; prussian_police_loyalty -= 0.05; enemy_strength += prussian_police_strength*prussian_police_militancy*(1-prussian_police_loyalty) if (not spd_prussia); 
+go-to: break_rally_fail if our_strenth <= enemy_strength; break_rally_succeed if our_strength > enemy_strength;
+
+We disrupt a NSDAP rally! Our street troops are preventing the Nazis from meeting.
+
+The SA goons immediately wade into the fray. [? if spd_prussia: The police attempts to hold the two groups apart, with great resentment and little success. ?] [? if (not spd_prussia): The police has been deployed against the Reichsbanner. ?] 
+
+@break_rally_fail
+on-arrival: workers_nsdap += 3; old_middle_nsdap += 1; new_middle_nsdap += 1; unemployed_nsdap += 1; rb_strength -= 50; sa_strength += 50
+
+Unfortunately, the Reichsbanner was not able to overcome the SA mob. The Nazi meeting goes ahead as usual.
+
+@break_rally_succeed:
+on_arrival: workers_nsdap -= 3; workers_spd += 3; sa_strength -= 20
+
+Ultimately, the SA mobs is unable to stand against the Reichsbanner. We have won this show of strength.
 
 @arm_rb
 subtitle: -[+ rb_militarization_cost +] resource
@@ -51,23 +70,24 @@ As part of the Iron Front, we are increasing coordination between the Reichsbann
 
 @prussian_police_training
 view-if: spd_prussia == 1 and prussian_police_loyalty > 0.5
-on-arrival: rb_militancy += 0.05; sa_strength += 50; police_rb_train += 1;
+on-arrival: rb_militancy += (0.1*(prussian_police_loyalty)); sa_strength += 50; police_rb_train += 1;
 
 The loyal sections of the Prussian police can help train the Reichsbanner.
 
 @prussian_police_teamwork
 view-if: spd_prussia == 1 and prussian_police_loyalty > 0.6 and police_rb_train >= 2 
-on-arrival: rb_militancy += 0.05; police_militancy += 0.05; sa_strength += 50; police_rb_team = 1;
+on-arrival: rb_militancy += (0.1*(prussian_police_loyalty)); police_militancy += 0.05; sa_strength += 50; police_rb_team = 1;
 max-visits: 2
 
 The Reichsbanner and the loyal sections of the Prussian police are learning to effectively fight alongside each other.
 
 @military_training
-view-if: reichswehr_loyalty >= 0.5 and reichswehr_militancy >= 1
-on-arrival: rb_militancy += 0.3; reichswehr_militancy -= 0.2 if military_rearmed <= 0; reichswehr_loyalty -= 0.1 if military_rearmed <= 0; sa_strength += 50; military_rb += 1; kpd_relation -= 5; dvp_relation -= 5; z_relation -= 5; z_relation -= 5 if historical_mode; coalition_dissent += 1; kpd_coalition_dissent += 1; pro_republic -= 5; pacifism -= 2; coup_progress += 1;
-max-visits: 2
+choose-if: (reichswehr_loyalty >= 0.6 or corrupt_military >= 2)
+unavailable-subtitle: The military would rather shoot Reichsbanner members than help them. 
+on-arrival: rb_militancy += (0.1*(reichswehr_militancy)); reichswehr_loyalty -= 0.1; reichswehr_militancy *= 0.9; reichswehr_loyalty -= 0.1 if military_rearmed <= 0; reichswehr_loyalty -= 0.1 if corrupt_military >= 2; sa_strength += 50; military_rb += 1; kpd_relation -= 5; dvp_relation -= 5; z_relation -= 5; z_relation -= 5 if historical_mode; coalition_dissent += 1; kpd_coalition_dissent += 1; pro_republic -= 5; pacifism -= 2; coup_progress += 1; spd_total_corruption += 1
+max-visits: 1
 
-Some of the [? if military_rearmed >= 1: recently manufactured ?] military equipment has inexplicably vanished from Reichswehr storehouses and ended up in the hands of our activists. Our loyalists in Reichswehr turn a blind eye, while everyone else decries our corruption and abuse of power.
+Some of the military equipment [? if military_rearmed >= 1: from the ongoing rearmament ?][? if military_rearmed < 1: left over from the last war ?] has inexplicably vanished from Reichswehr storehouses and ended up in the hands of our activists. While our loyalists in Reichswehr turn a blind eye, everyone else decries our corruption and abuse of power.
 
 @peace
 on-arrival: rb_militancy -= 0.02; rb_strength -= 50; pacifism += 1
@@ -86,7 +106,7 @@ We have made at least a temporary truce with the KPD, so that our respective par
 choose-if: kpd_relation >= 55
 view-if: kpd_truce == 1 and rfd_rb_team == 0
 unavailable-subtitle: The KPD is not interested.
-on-arrival: rfd_rb_team = 1; kpd_relation += 5; rfb_strength += 70; rb_strength += 70; sa_strength += 50;
-max-visits: 1
+on-arrival: rfd_rb_team = 1; kpd_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
+max-visits: 2
 
-We are coordinating with the KPD, so that our respective paramilitaries can fight alongside each other.
+We are coordinating with the KPD, so that our respective paramilitaries can occasionally fight alongside each other in the future.
