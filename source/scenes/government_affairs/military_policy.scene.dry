@@ -37,9 +37,8 @@ on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; reic
 The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
 
 @disband_reichswehr
-view-if: military_rearmed == 0
 title: Declare total demilitarization and disband the military.
-view-if: disband_military = 0 and reichswehr_strength <= 0
+view-if: disband_military == 0 and reichswehr_strength <= 0 and military_rearmed == 0
 unavailable-subtitle: [? if nationalism >= 46 : Nationalism is too strong. ?] [? if pacifism <= 4 : There is insufficient support for pacifism. ?] [? if judicial_reform < 3 : The judiciary would never allow this. ?]
 choose-if: pacifism > 4 and nationalism < 46 and judicial_reform > 2
 on-arrival: disband_military = 1; coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); coalition_dissent += 1 if (reparations == -2 and (in_grand_coalition or in_weimar_coalition)); reichswehr_militancy = 0; reichswehr_loyalty = 0; left_dissent -= 15; center_dissent += 10; coup_progress +=1; coup_progress += 1 if reparations == -2; reichswehr_goal_completed = 1; reichswehr_minister = "N/A"; reichswehr_minister_party = "N/A"; kpd_relation += 8; workers_kpd += 3; unemployed_kpd += 3; workers_spd += 8*(1-dissent); unemployed_spd += 5*(1-dissent); new_middle_spd -= 5 if reparations == -2; old_middle_spd -= 5 if reparations == -2; z_relation -= 3; dvp_relation -= 3; z_relation -= 5 if reparations == -2; dvp_relation -= 3 if reparations == -2; communist_coalition += 1; rfb_strength += 100; rfb_militancy += 0.1; sa_strength += 50; sh_strength += 50; west_relation += 3; east_relation += 3; reparations_negotiation += 3; workers_spd += 8*(1-dissent) if reparations > -2; old_middle_spd += 5*(1-dissent) if reparations > -2; new_middle_spd += 5*(1-dissent) if reparations > -2; rural_spd += 5*(1-dissent)  if reparations > -2; reparations = -2
@@ -48,8 +47,8 @@ Our attempt is successful and Reichswehr is no more! The centrists and reactiona
 
 @remilitarize
 title: Commit to rearmament of Reichswehr.
-subtitle: -1 budget
-view-if: world_war_two == 0 and reichswehr_strength >= 160 
+subtitle: -1 budget. There may be consequences.
+view-if: military_rearmed == 0 and reichswehr_strength >= 160 
 choose-if: budget >= 1 and judiciary <= 2
 unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if (judicial_reform > 3 and corrupt_judiciary == 0) : The judiciary would never allow this violation of our international treaties. ?][? if (judicial_reform > 3 and corrupt_judiciary >= 1) : The judiciary would never allow this violation of our international treaties, even with our pet jurists tilting the scales. ?]
 on-arrival: budget -= 1; military_rearmed += 1; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 100; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 2; east_relation -= 2; reparations_negotiation -= 3; banking_crisis_timer = 2;
@@ -59,8 +58,8 @@ The military and the center-right parties are delighted by our commitment to mil
 
 @remilitarize_two
 title: Continue the rearmament of Reichswehr.
-subtitle: -1 budget
-view-if: military_rearmed >= 1 and reichswehr_strength >= 160 
+subtitle: -1 budget. This will not end well.
+view-if: military_rearmed >= 1 
 choose-if: budget >= 1 and judiciary <= 2
 unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if (judicial_reform > 3 and corrupt_judiciary == 0) : The judiciary would never allow this violation of our international treaties. ?][? if (judicial_reform > 3 and corrupt_judiciary >= 1) : The judiciary would never allow this violation of our international treaties, even with our pet jurists tilting the scales. ?]
 on-arrival: budget -= 1; military_rearmed += 1; world_war_two += 3; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 300; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 4; east_relation -= 4; reparations_negotiation -= 4
