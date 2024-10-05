@@ -34,7 +34,7 @@ Many Reichsbanner members are not ready for actual fighting, and thus quit. Howe
 @break_sa_rally
 view-if: rb_militancy >= 0.5
 on-arrival: strife += 1; spd_hostile += 1; our_strength = rb_strength*rb_militancy*(1-dissent); enemy_strength = sa_strength*sa_militancy*0.7; prussian_police_loyalty -= 0.05; enemy_strength += prussian_police_strength*prussian_police_militancy*(1-prussian_police_loyalty) if (not spd_prussia); pacifism -= 1;
-go-to: break_rally_fail if our_strenth < enemy_strength; break_rally_succeed if our_strength >= enemy_strength
+go-to: break_rally_fail if our_strength < enemy_strength; break_rally_succeed if our_strength >= enemy_strength
 
 Our street troops disrupt a NSDAP rally to prevent the Nazis from meeting. The SA goons immediately wade into the fray. [? if spd_prussia: The police attempts to hold the two groups apart, with great resentment and little success. ?] [? if (not spd_prussia): The police has been deployed against the Reichsbanner. ?] 
 
