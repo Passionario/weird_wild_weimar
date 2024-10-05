@@ -1,9 +1,17 @@
 v.0.4:
-1932 Olympics content
-Party Organizations update
-Fundraising update
-Military Policy update
-Interior Policy update
-Prussian Bulwark light update
-Streetfighting update
+
+New and updated events:
+1932 Olympics (NEW! invest in sports early and often)
+Altona Bloody Sunday (added unwise choice for militarized RB)
+
+Updated cards:
+Party Organizations (extra payoff for sports)
+Fundraising update (can go to 0 or above 5, with consequences)
+Military Policy update (extra options if you go very high or very low)
+Interior Policy update (extra payoff for more investigations of far right)
+Prussian Bulwark light update (improved feedback for purging bureaucracy)
+Streetfighting update (a lot more fighting)
+
+Other:
+Historic mode is now a separate setting
 New achievements
