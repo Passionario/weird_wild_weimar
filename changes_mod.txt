@@ -1,6 +1,7 @@
 Current build:
 
 - Military Policy update (rearmament now causes banking crisis)
+- Added a new Bad Ending if you continue to rearm the military after all warnings
 
 v.0.4:
 
