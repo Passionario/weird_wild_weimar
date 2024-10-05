@@ -23,9 +23,9 @@ The Reichswehr is a deeply reactionary institution that has been generally hosti
 subtitle: -1 budget
 choose-if: budget >= 1
 unavailable-subtitle: We do not have the budget.
-on-arrival: budget -= 1; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.1; reichswehr_strength += 20; kpd_coalition_dissent += 1; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 1
+on-arrival: budget -= 1; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.1; reichswehr_militancy += 0.5; reichswehr_strength += 20; kpd_coalition_dissent += 1; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 1
 
-The military and the center-right parties are pleasantly surprised that we would increase military funding. Our membership tends to be anti-military, and is less enthused. Germany's neighbors are watching our military buildup with worry. [? if reparations >= 0 : This is not good for the reparations negotiations. ?]
+The military has more guns and more soldiers. The military and the center-right parties are pleasantly surprised that we would increase military funding. Our membership tends to be anti-military, and is less enthused. Germany's neighbors are watching our military buildup with worry. [? if reparations >= 0 : This is not good for the reparations negotiations. ?]
 
 @decrease_funding
 subtitle: +1 budget
@@ -49,20 +49,22 @@ title: Commit to rearmament of Reichswehr.
 subtitle: -1 budget
 view-if: world_war_two == 0 and reichswehr_strength >= 160 
 choose-if: budget >= 1 and judiciary <= 2
-unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if judicial_reform > 3 : The judiciary would never allow this violation of our international treaties. ?]
-on-arrival: budget -= 1; world_war_two += 1; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 40; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 2; east_relation -= 2; reparations_negotiation -= 3
+unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if (judicial_reform > 3 and corrupt_judiciary == 0) : The judiciary would never allow this violation of our international treaties. ?][? if (judicial_reform > 3 and corrupt_judiciary >= 1) : The judiciary would never allow this violation of our international treaties, even with our pet jurists tilting the scales. ?]
+on-arrival: budget -= 1; military_rearmed += 1; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 100; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 2; east_relation -= 2; reparations_negotiation -= 3; banking_crisis_timer = 2;
+max-visits: 1
 
-The military and the center-right parties are delighted by our commitment to military funding. Our membership tends to be anti-military, and is very alarmed. Germany's neighbors are openly warning us that any further rearmament will be a violation of the Treaty of Versailles.
+The military and the center-right parties are delighted by our commitment to military rearmament. Our membership tends to be anti-military, and is very alarmed. Germany's neighbors declare our actions a violation of the Treaty of Versailles and promise dire repercussions.
 
 @remilitarize_two
 title: Continue the rearmament of Reichswehr.
 subtitle: -1 budget
-view-if: world_war_two == 1 and reichswehr_strength >= 160 
+view-if: military_rearmed == 1 and reichswehr_strength >= 160 
 choose-if: budget >= 1 and judiciary <= 2
-unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if judicial_reform > 3 : The judiciary would never allow this violation of our international treaties. ?]
-on-arrival: budget -= 1; world_war_two += 3; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 40; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 2; east_relation -= 2; reparations_negotiation -= 3
+unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if (judicial_reform > 3 and corrupt_judiciary == 0) : The judiciary would never allow this violation of our international treaties. ?][? if (judicial_reform > 3 and corrupt_judiciary >= 1) : The judiciary would never allow this violation of our international treaties, even with our pet jurists tilting the scales. ?]
+on-arrival: budget -= 1; military_rearmed += 1; world_war_two += 3; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 300; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 4; east_relation -= 4; reparations_negotiation -= 4
+max-visits: 2
 
-The military and the center-right parties are delighted by our commitment to military funding. Our membership tends to be anti-military, and is very alarmed. Germany's neighbors declare our actions a violation of the Treaty of Versailles and promise dire repercussions.
+The military has more soldiers and a lot more guns. Germany's neighbors respond by ramping up their own military buildup. 
 
 @reform
 subtitle: -1 budget
