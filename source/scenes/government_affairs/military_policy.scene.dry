@@ -28,14 +28,16 @@ on-arrival: budget -= 1; coalition_dissent -= 1 if coalition_dissent > 0; reichs
 The military has more guns and more soldiers. The military and the center-right parties are pleasantly surprised that we would increase military funding. Our membership tends to be anti-military, and is less enthused. Germany's neighbors are watching our military buildup with worry. [? if reparations >= 0 : This is not good for the reparations negotiations. ?]
 
 @decrease_funding
+view-if: military_rearmed == 0
 subtitle: +1 budget
 unavailable-subtitle: There is nothing left to cut.
-choose-if: reichswehr_strength > 0 and world_war_two == 0
+choose-if: reichswehr_strength > 0 
 on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; reichswehr_militancy -= 1; reichswehr_strength -= 20; reichswehr_loyalty -= 0.05; coup_progress += 1; reichswehr_goal_completed = 1;
 
 The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
 
 @disband_reichswehr
+view-if: military_rearmed == 0
 title: Declare total demilitarization and disband the military.
 view-if: disband_military = 0 and reichswehr_strength <= 0
 unavailable-subtitle: [? if nationalism >= 46 : Nationalism is too strong. ?] [? if pacifism <= 4 : There is insufficient support for pacifism. ?] [? if judicial_reform < 3 : The judiciary would never allow this. ?]
@@ -58,7 +60,7 @@ The military and the center-right parties are delighted by our commitment to mil
 @remilitarize_two
 title: Continue the rearmament of Reichswehr.
 subtitle: -1 budget
-view-if: military_rearmed == 1 and reichswehr_strength >= 160 
+view-if: military_rearmed >= 1 and reichswehr_strength >= 160 
 choose-if: budget >= 1 and judiciary <= 2
 unavailable-subtitle: [? if budget <= 0 : We do not have the budget. ?] [? if (judicial_reform > 3 and corrupt_judiciary == 0) : The judiciary would never allow this violation of our international treaties. ?][? if (judicial_reform > 3 and corrupt_judiciary >= 1) : The judiciary would never allow this violation of our international treaties, even with our pet jurists tilting the scales. ?]
 on-arrival: budget -= 1; military_rearmed += 1; world_war_two += 3; coalition_dissent -= 1 if coalition_dissent > 0; reichswehr_loyalty += 0.2; reichswehr_strength += 300; reichswehr_militancy += 2; kpd_coalition_dissent += 2; west_relation -= 4; east_relation -= 4; reparations_negotiation -= 4
