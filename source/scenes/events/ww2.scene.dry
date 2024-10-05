@@ -7,7 +7,9 @@ max-visits: 1
 tags: event
 new-page: true
 
-The Allied Powers had warned us that we had been blatantly violating the Treaty of Versailles, and now they are here to enforce it. Their armies have already occupied Rhineland and are pushing further into our territory. More worryingly, their navies have resumed maritime blockade, dooming our population to poverty and mass starvation. [? if panzerkreuzer_a_funded: Our vaunted battlecruise Panzerkreuzer A is sunk by a submarine attack in its first engagement. ?][? if panzerkreuzer_b_funded: Panzerkreuzer B is still under construction and of no use. ?][? if not (panzerkreuzer_a_funded or panzerkreuzer_b_funded): Since we had consistently refused to construct new battlecruisers, there is nothing we can do to stop them. ?]
+= World War Two
+
+The Allied Powers had warned us that we had been blatantly violating the Treaty of Versailles, and now they are here to enforce it. Their armies have already occupied Rhineland and are pushing further into our territory. More worryingly, their navies have resumed maritime blockade, dooming our population to poverty and mass starvation. [? if panzerkreuzer_funded: Our vaunted battlecruise Panzerkreuzer A is sunk by a submarine attack in its first engagement. ?][? if panzerkreuzer_b_funded: Panzerkreuzer B is still under construction and of no use. ?][? if not (panzerkreuzer_funded or panzerkreuzer_b_funded): Since we had consistently refused to construct new battlecruisers, there is nothing we can do to stop them. ?]
                                               
 The Allies demand our complete surrender and for our leadership to stand trial. What are we to do now?
 
@@ -40,6 +42,6 @@ Germany is occupied and partitioned among the victors. SPD leaders and many regu
 
 @welp
 subtitle: And no, there is no achievement for this. We do not reward failure.
-go-to: game_over
+game-over: true
 
 This is the end. 
