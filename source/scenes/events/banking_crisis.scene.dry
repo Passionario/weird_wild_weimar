@@ -9,7 +9,7 @@ face-image: img/danat_bank.jpg
 
 = Banking Crisis
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the [? if (customs_union = 1 and military_rearmed >= 1): government's pursuit of a customs union with Austria and illegal rearmament of the military ?][? if (customs_union = 1 and military_rearmed = 0): government's pursuit of a customs union with Austria ?][? if (customs_union = 0 and military_rearmed >= 1): illegal rearmament of the military ?], which led to de facto international sanctions.
+The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the [? if (customs_union = 1 and military_rearmed >= 1): government's pursuit of a customs union with Austria and illegal rearmament of the military, which led to de facto international sanctions. ?][? if (customs_union = 1 and military_rearmed = 0): government's pursuit of a customs union with Austria, which led to de facto international sanctions. ?][? if (customs_union = 0 and military_rearmed >= 1): illegal rearmament of the military, which led to de facto international sanctions. ?]
 
 This is a bourgeois dispute, but the costs will be borne by the proletariat. The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
 
