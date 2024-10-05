@@ -40,6 +40,10 @@ We disrupt a NSDAP rally! Our street troops are preventing the Nazis from meetin
 
 The SA goons immediately wade into the fray. [? if spd_prussia: The police attempts to hold the two groups apart, with great resentment and little success. ?] [? if (not spd_prussia): The police has been deployed against the Reichsbanner. ?] 
 
+// test info
+
+TEST_INFO: OS [+ our_strength =], RBS [+ rb_strength +], RBM [+ rb_militancy +], ES [+ enemy_strength +], SAS [+ sa_strength +], SAM [+ sa_militancy +]
+
 @break_rally_fail
 on-arrival: workers_nsdap += 3; old_middle_nsdap += 1; new_middle_nsdap += 1; unemployed_nsdap += 1; rb_strength -= 50; sa_strength += 50
 
