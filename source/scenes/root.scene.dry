@@ -635,14 +635,14 @@ You will have additional insights to guide your decisions.
 
 Now, choose your difficulty:
 
-- @1928_test: Begin (PLAYTEST MODE)
+#- @1928_test: Begin (PLAYTEST MODE)
 - @1928_easy: Begin (easy difficulty)
 - @1928_normal: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_nightmare: Begin (nightmare difficulty)
 
 @1928_test
-subtitle: [? if infodump >= 1 : REMOVE THIS BEFORE RELEASE. ?]
+subtitle: REMOVE THIS BEFORE RELEASE.
 on-arrival: difficulty = -1; resources = 99; dues = 4; budget = 99; rb_strength = 9000; rb_militancy = 10; kpd_relation = 99; z_relation = 99; dvp_relation = 99;
 go-to: 1928_main
 
