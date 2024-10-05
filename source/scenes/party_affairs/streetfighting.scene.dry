@@ -45,10 +45,10 @@ on-arrival: workers_nsdap += 3; old_middle_nsdap += 1; new_middle_nsdap += 1; un
 
 Unfortunately, the Reichsbanner was not able to overcome the SA mob. The Nazi meeting goes ahead as usual.
 
-@break_rally_succeed:
+@break_rally_succeed
 on_arrival: workers_nsdap -= 3; workers_spd += 3; sa_strength -= 20
 
-Ultimately, the SA mobs is unable to stand against the Reichsbanner. We have won this show of strength.
+Ultimately, the SA mob is unable to stand against the Reichsbanner. We have won this show of strength.
 
 @arm_rb
 subtitle: -[+ rb_militarization_cost +] resource
