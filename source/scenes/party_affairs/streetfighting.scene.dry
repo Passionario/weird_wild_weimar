@@ -36,9 +36,7 @@ view-if: rb_militancy >= 0.5
 on-arrival: strife += 1; spd_hostile += 1; our_strength = rb_strength*rb_militancy*(1-dissent); enemy_strength = sa_strength*sa_militancy*0.7; prussian_police_loyalty -= 0.05; enemy_strength += prussian_police_strength*prussian_police_militancy*(1-prussian_police_loyalty) if (not spd_prussia); pacifism -= 1;
 go-to: break_rally_fail if our_strenth < enemy_strength; break_rally_succeed if our_strength >= enemy_strength
 
-We disrupt a NSDAP rally! Our street troops are preventing the Nazis from meeting.
-
-The SA goons immediately wade into the fray. [? if spd_prussia: The police attempts to hold the two groups apart, with great resentment and little success. ?] [? if (not spd_prussia): The police has been deployed against the Reichsbanner. ?] 
+Our street troops disrupt a NSDAP rally to prevent the Nazis from meeting. The SA goons immediately wade into the fray. [? if spd_prussia: The police attempts to hold the two groups apart, with great resentment and little success. ?] [? if (not spd_prussia): The police has been deployed against the Reichsbanner. ?] 
 
 @break_rally_fail
 on-arrival: workers_nsdap += 3; old_middle_nsdap += 1; new_middle_nsdap += 1; unemployed_nsdap += 1; rb_strength -= 50; sa_strength += 50
@@ -48,7 +46,7 @@ Unfortunately, the Reichsbanner was not able to overcome the SA mob. The Nazi me
 @break_rally_succeed
 on_arrival: workers_nsdap -= 3; workers_spd += 3; sa_strength -= 20
 
-Ultimately, the SA mob is unable to stand against the Reichsbanner. We have won this show of strength.
+Our disruption is successful! The Nazis are cowed by our show of strength and flee the scene.
 
 @arm_rb
 subtitle: -[+ rb_militarization_cost +] resource
