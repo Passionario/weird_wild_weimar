@@ -43,7 +43,9 @@ Q.rich_eaten = 0;
 Q.corrupt_judiciary = 0;
 Q.corrupt_prussian_police = 0;
 Q.corrupt_interior = 0;
+Q.corrupt_military = 0;
 Q.spd_total_corruption = 0;
+Q.spd_hostile = 0;
 
 // Implemented Mod Stuff
 Q.olympics = 0;
