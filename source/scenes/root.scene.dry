@@ -13,13 +13,8 @@ go-to: start_menu_2
 - @start: Start game
 - @election_simulation: Election simulation
 - @credits: Credits
-- @modinfo: Mod info 
+- @mod_info: Mod info 
 - @game_over.achievements: Achievements
-
-@modinfo
-go-to: start_menu_2
-
-"Two Steps Forward, One Leap Below" is an unofficial mod that lets you push certain initiatives beyond their intended limit and/or attempt unwise radical actions. It is neither historically accurate nor an endorsement of anything displayed therein.
 
 @start
 on-arrival: {!
@@ -34,7 +29,6 @@ Q.month_actions = 0;
 //Unimplemented Mod Stuff
 Q.infodump = 0;
 Q.hitler_dead = 0;
-Q.world_war_two = 0;
 Q.catholic_strike = 0;
 Q.privatize_welfare = 0;
 Q.disband_police = 0;
@@ -63,6 +57,7 @@ Q.military_rb = 0;
 Q.if_rb_team = 0;
 Q.rfd_rb_team = 0;
 Q.altona_guilt = 0;
+Q.world_war_two = 0;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
