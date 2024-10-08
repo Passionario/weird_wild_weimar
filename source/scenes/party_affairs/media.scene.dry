@@ -17,6 +17,7 @@ The SPD runs a veritable media empire, with many newspapers throughout every Ger
 - @radio_2
 - @radio_3
 - @radio_4
+- @radio_boom
 - @return: We should not do anything with media at the moment.
 - @easy_discard
 
@@ -78,3 +79,10 @@ view-if: radio > 3 and (radio >= 6 or year >= 1932) and radio <= 9
 on-arrival: radio += 1; resources -= 1; new_middle_spd += 3*(1 - dissent); old_middle_spd += 2*(1 - dissent); workers_spd += 3*(1 - dissent); rural_spd += 2*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 2*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)*(democratization-2) if democratization > 2
 
 We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
+
+@radio_boom
+title: We will use our extensive radio network to transmit the detonation signal.
+view-if: radio > 3 and investigate_far_right >= 5 and hitler_dead == 0
+on_arrival: hitler_dead = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Goebbels"; catholics_nsdap -= 10
+
+Miraculously, the plan works. There is frenzied speculation whether the freak explosion that killed Hitler in a closed room was an accident, a suicide, an act of God or an assassination, but the effect is undeniable. Disillusioned followers leave NSDAP in droves, our hands remain clean, and the unknown vigilante may rest in peace.
