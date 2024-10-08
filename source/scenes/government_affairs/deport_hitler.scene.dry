@@ -1,8 +1,8 @@
 title: We can deport Hitler.
 subtitle: He is a foreign citizen and a criminal, after all.
-unavailable-subtitle: [? if judicial_reform < 2 : Unfortunately, the reactionary judiciary will not cooperate. ?] [? if presidential_election_seen == 1 : Hitler has already been made a citizen of Germany, in the run-up to the presidential election. ?] [? if not spd_prussia : We cannot do this without the cooperation of the Prussian police, who are not currently in our control. ?]
+unavailable-subtitle: [? if judicial_reform < 2 : Unfortunately, the reactionary judiciary will not cooperate. ?] [? if presidential_election_seen == 1 : Hitler has already been made a citizen of Germany, in the run-up to the presidential election. ?] [? if not spd_prussia : We cannot do this without the cooperation of the Prussian police, who are not currently in our control. ?] [? if attack_hilter_seen: After our botched attempt, no judge will touch Hitler's case again. ?]
 view-if: nazi_urgency >= 3 and hitler_deported = 0 and chancellor != "Papen" and chancellor != "Schleicher" and investigate_far_right >= 2
-choose-if: judicial_reform >= 2 and presidential_election_seen == 0 and spd_prussia == 1
+choose-if: judicial_reform >= 2 and presidential_election_seen == 0 and spd_prussia == 1 and attack_hitler_seen == 0
 
 Is it really that simple? Won't his supporters react violently to this suggestion? And even if the deportation does succeed, won't he just re-enter the country, or perhaps organize from Austria? And, some people consider this to be an anti-democratic abuse of power, using the law in order to target a political opponent.
 
@@ -50,7 +50,7 @@ The confrontation ends with the police and Reichsbanner prevailing, capturing Hi
 In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
 
 @force_kill
-on-arrival: hitler_dead = 1; sa_strength = sa_strength*0.7; strife += 2; coalition_dissent +=1; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; rural_nsdap -= 6; unemployed_nsdap -= 6; coup_progress += 2; nsdap_leader = "Goebbels"
+on-arrival: hitler_dead = 1; sa_strength = sa_strength*0.7; rb_strength = rb_strength*0.9; prussian_police_strength = prussian_police_strength*0.9; strife += 2; coalition_dissent += 1; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; rural_nsdap -= 6; unemployed_nsdap -= 6; coup_progress += 4; nsdap_leader = "Goebbels"; prussian_police_loyalty -= 0.2
 achievement: untergang
 
 The confrontation escalates into an all-out firefight between the police, the Reichsbanner, and the right-wing militias. The final casualty count amounts to hundreds of wounded and dozens of fatalities, the latter including Hitler himself. The press blames the massacre on us, but perhaps this blood price will be enough to forestall worse massacres.
