@@ -13,6 +13,7 @@ The Interior Ministry controls internal security throughout the German Republic.
 As with the state police units and the Reichswehr, the internal police tends to be reactionary, and has serious issues with loyalty to the elected government of the Republic.
 
 - @loyalty: Improve the loyalty of the Interior Ministry forces.
+- @corrupt_interior: Buy their loyalty through bribery and blackmail.
 - @investigate_corruption: Investigate corruption by big businesses.
 - @investigate_far_right: Investigate illegal activity among the far right.
 - @investigate_far_left: Investigate illegal activity among the far left.
@@ -27,6 +28,11 @@ on-arrival: interior_police_loyalty += 0.1
 As with the Prussian state police, there are measures we can take to root out reactionary and anti-democratic sentiment in the police. We can improve training and recruiting procedures, and identify and remove known fascists and the like. [? if interior_police_loyalty >= 0.7: We can create internal affairs committees to root out right-wing informers. ?][? if interior_police_loyalty >= 0.8: Yet the eternal question continues to haunt us: who watches the watchmen? ?]
 
 Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
+
+@corrupt_interior
+on-arrival: interior_police_loyalty -= 0.1; corrupt_interior += 1; spd_total_corruption += 1
+
+The interior police already has its fair share of corruption, so adding some more is not difficult. Each officer with a gambling debt or a penchant for illicit vices is someone we can get into our pocket and promote into a higher rank. This makes us no friends among their colleagues, who resent being passed over for promotions in favor of our puppets.
 
 @investigate_corruption
 go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
