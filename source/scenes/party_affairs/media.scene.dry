@@ -13,6 +13,7 @@ The SPD runs a veritable media empire, with many newspapers throughout every Ger
 - @commercial
 - @campaign
 - @ideological
+- @attack_and_dethrone_god
 - @radio
 - @radio_2
 - @radio_3
@@ -41,6 +42,16 @@ subtitle: There will be space for all factions to air their views.
 on-arrival: left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
 
 This has been our media course historically, and it has successfully paved over the many tensions in our party.
+
+@attack_and_dethrone_god
+title: Publish novel research on gender and sexuality.
+view-if: hirschfeld_advisor = 1
+subtitle: -1 resource
+choose-if: homosexual_rights >= 1
+unavailable-subtitle: [? if homosexual_rights == 0 : The research subject is criminalized under current laws. ?][? if resources < 1: Not enough resources. ?]
+on-arrival: resources -=1; advisor_action_timer = 6; trans_progress += 1; catholics -= 4*trans_progress; coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); coalition_dissent += 1 if ((in_grand_coalition or in_weimar_coalition) and homosexual_rights < 3); catholics_spd -= 4; z_relation -= 4; catholics = 2 if catholics <= 2; catholic_strike += 1; catholic_strike += 1 if trans_progress >= 3
+
+We publish Institut für Sexualwissenschaft's scientific research that challenges traditional understanding of sexuality and gender, and leads more than a few readers questioning their beliefs. [? if homosexual_rights < 3: Of course, conservatives and the far right accuse us of promoting deviant and illegal activities ?].
 
 @radio
 title: Why not fund a radio station?
