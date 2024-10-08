@@ -51,19 +51,20 @@ on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; n
 [? if investigate_far_right == 3 : We have discovered a secret cache of documents from the NSDAP detailing their plan to violently take over the country if they enter into power. This is an anti-constitutional plot, and will be publicized and prosecuted. ?]
 [? if investigate_far_right == 4 : We have discovered a string of secret murders committed by Nazis. None of the victims match any records. ?]
 [? if investigate_far_right == 5 : We have further investigated the secret murders committed by Nazis. Allegedly, all of the victims were vigilantes who had tried to kill Hitler or were plotting to do so. ?][? if (investigate_far_right == 5 and kill_hitler == 0): Alas, none of them had succeeded, but we have learned much about the strengths and vulnerabilities of SA from their attempts. ?][? if (investigate_far_right == 5 and kill_hitler == 1) : Thankfully, we have succeeded where they had failed. ?]
-[? if investigate_far_right > 5 : Of course the Nazis are doing crimes; everyone knows that. And some of those who know are trying to stop them. ?]
+[? if investigate_far_right == 6 : We have researched the preparations done by the vigilantes who went after Hitler, and discovered that one of them had managed to place remotely activated microexplosives in Hitler's room, but was prevented from transmitting a sufficiently strong detonation signal. ?]
+[? if investigate_far_right > 6 : Of course the Nazis are doing crimes; everyone knows that. And some of those who know are trying to stop them. ?]
 
+[? if coup_progress >= 6: There are reports of an imminent coup by the far-right. We have attempted to disrupt some of these plans, but the threat is still present. ?]
 
 @investigate_far_right_failure
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
-
 @investigate_far_left
 go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and investigate_far_right >= 3); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_nothing if investigate_far_right < 3
 
 @investigate_far_left_falseflag
-on-arrival: reichstag_burn = 1; sa_strength -= 60; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; workers_kpd += 5; workers_spd += 3*(1-dissent); kpd_relation += 6; coup_progress -= 2 if coup_progress >= 2;
+on-arrival: reichstag_burn = 1; sa_strength -= 60; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; workers_kpd += 5; workers_spd += 3*(1-dissent); kpd_relation += 6; coup_progress -= 3 if coup_progress >= 3;
 
 By cross-referencing the police's findings with earlier investigations of the far right, we have uncovered a Nazi plot to burn down the Reichstag and frame the Communists for it! Thankfully, we have managed to foil their treacherous plot. Our allies in the KPD are grateful for the help, and agree to overlook the police intrusion in their affairs - this time.
 
