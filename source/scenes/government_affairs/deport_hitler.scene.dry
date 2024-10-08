@@ -34,7 +34,7 @@ if (total_allied_strength > enemy_strength) {
     Q.deportation_success = 0;
 }
 !}
-go-to: force_fail if deportation_success == 0 and firepower < 2; force_success if deportation_success = 1 and firepower < 2; force_kill if firepower >= 2
+go-to: force_fail if deportation_success == 0 and firepower < 1.8; force_success if deportation_success = 1 and firepower < 1.8; force_kill if firepower >= 1.8
 
 @force_fail
 on-arrival: sa_strength += 50; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 5; old_middle_nsdap += 5; rural_nsdap += 5; coup_progress += 3
@@ -66,7 +66,7 @@ Somehow, the plan worked! There was minimal resistance to Hitler's deportation. 
 In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
 
 @force_prejudice
-choose-if: (rb_militancy + prussian_police_militancy) <= 1.5
+choose-if: (rb_militancy + prussian_police_militancy) >= 1.4
 unavailable-subtitle: Our units and the police don't have enough guns between them.
 on-arrival: {!
 var total_allied_strength = Q.rb_strength*Q.rb_militancy + Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
