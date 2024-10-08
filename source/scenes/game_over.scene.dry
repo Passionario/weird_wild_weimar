@@ -101,18 +101,6 @@ if ((Q.nationalization_progress >= 1 && Q.wtb_implemented >= 1) || (Q.wtb_implem
 if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
-// Burgherburger - encourage cannibalism
-if (Q.rich_eaten) {
-    this.achieve("burgherburger");
-}
-// Untergang - kill Hitler
-if (Q.hitler_dead == 1) {
-    this.achieve("untergang");
-}
-// Roter Alarm Null - are time travellers trying to kill Hitler?
-if (Q.investigate_far_right >= 5) {
-    this.achieve("roter_alarm_null");
-}
 // Sind wir die Bösen - be responsible for Blutmai and Altona Blood Sunday
 if (Q.blutmai && Q.altona_guilt) {
     this.achieve("sind_wir_die_bosen");
