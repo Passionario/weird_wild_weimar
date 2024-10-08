@@ -82,6 +82,9 @@ if (Q.rural_spd_normalized && Q.rural_spd_normalized >= 50) {
 if (Q.catholics_spd_normalized && Q.catholics_spd_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
+if (Q.workers_spd_normalized >= 80 && Q.new_middle_spd_normalized <= 10 && Q.old_middle_spd_normalized <= 10) {
+    this.achieve('klassenkampf');
+}
 // Räterepublik - begin the transformation to a socialist economy.
 if (Q.spd_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democracy >= 3) || (Q.nationalization_progress >= 1 && Q.economic_democracy >= 4))) {
     this.achieve('raterepublik');
@@ -99,7 +102,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Burgherburger - encourage cannibalism
-if (Q.eat_the_rich >= 2) {
+if (Q.rich_eaten) {
     this.achieve("burgherburger");
 }
 // Untergang - kill Hitler
@@ -115,7 +118,7 @@ if (Q.blutmai && Q.altona_guilt) {
     this.achieve("sind_wir_die_bosen");
 }
 // Fehlende Zündung - prevent the Reichstag fire plot
-if (Q.reichstag_burn) {
+if (Q.reichstag_burn && Q.chancellor_party != "NSDAP") {
     this.achieve("fehlende_zundung");
 }
 // Stolperstein - lose the civil war against Hitler.
@@ -400,6 +403,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_katholischer_sozialismus: **Katholischer Sozialismus** - SPD Catholic support is at least 50%. ?]
 
+[? if game_achievement_klassenkampf: **Klassenkampf** - SPD worker support is at least 80%, while middle-class support is less than 10%. ?]
+
 [? if game_achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
 [? if game_achievement_polykrise: **Polykrise** - survive a capital strike and a fascist coup. ?]
@@ -426,11 +431,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_sind_wir_die_bosen: **Sind wir die Bösen?** - be responsible for Blutmai and Altona Bloody Sunday. ?]
 
-[? if game_achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire plot. ?]
+[? if game_achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire. ?]
 
 [? if game_achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
-[? if game_achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
+[? if game_achievement_roter_alarm_null: **Roter Alarm Null** - discover and complete an impossible plot. ?]
 
 = Completed Achievements Overall
 
@@ -501,6 +506,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bauernrevolution: **Bauernrevolution** - SPD rural support is at least 50%. ?]
 
+[? if achievement_klassenkampf: **Klassenkampf** - SPD worker support is at least 80%, while middle-class support is less than 10%. ?]
+
 [? if achievement_katholischer_sozialismus: **Katholischer Sozialismus** - SPD Catholic support is at least 50%. ?]
 
 [? if achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
@@ -527,13 +534,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
-[? if achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire plot. ?]
+[? if achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire. ?]
 
 [? if achievement_sind_wir_die_bosen: **Sind wir die Bösen?** - be responsible for Blutmai and Altona Bloody Sunday. ?]
 
 [? if achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
-[? if achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
+[? if achievement_roter_alarm_null: **Roter Alarm Null** - discover and complete an impossible plot. ?]
 
 [? if (achievement_roter_alarm_null and achievement_amerikanischen and achievement_fehlende_zundung and achievement_sind_wir_die_bosen and achievement_olympiasieger and achievement_untergang and achievement_burgherburger): **Lasst uns diese Scheiße in Grund und Boden laufen lassen!** - over multiple playthroughs, complete all other achievements of the 'Two Steps Forward, One Leap Below' mod. ?]
 
@@ -605,6 +612,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bauernrevolution: **Bauernrevolution** - SPD rural support is at least 50%. ?]
 
+[? if not achievement_klassenkampf: **Klassenkampf** - SPD worker support is at least 80%, while middle-class support is less than 10%. ?]
+
 [? if not achievement_katholischer_sozialismus: **Katholischer Sozialismus** - SPD Catholic support is at least 50%. ?]
 
 [? if not achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
@@ -631,13 +640,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_olympiasieger: **Olympiasieger** - bring home the gold from Los Angeles. ?]
 
-[? if not achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire plot. ?]
+[? if not achievement_fehlende_zundung: **Fehlende Zündung** - prevent the Reichstag fire. ?]
 
 [? if not achievement_sind_wir_die_bosen: **Sind wir die Bösen?** - be responsible for Blutmai and Altona Bloody Sunday. ?]
 
 [? if not achievement_amerikanischen: **Sozialismus mit Amerikanischen Merkmalen** - empower the Socialist Party of America. ?]
 
-[? if not achievement_roter_alarm_null: **Roter Alarm Null** - uncover an impossible plot. ?]
+[? if not achievement_roter_alarm_null: **Roter Alarm Null** - discover and complete impossible plot. ?]
 
 [? if not (achievement_roter_alarm_null and achievement_amerikanischen and achievement_fehlende_zundung and achievement_sind_wir_die_bosen and achievement_olympiasieger and achievement_untergang and achievement_burgherburger): **Lasst uns diese Scheiße in Grund und Boden laufen lassen!** - over multiple playthroughs, complete all other achievements of the 'Two Steps Forward, One Leap Below' mod. ?]
 
