@@ -32,10 +32,11 @@ The more radical workers despise our suppression of their strikes, recalling the
 
 @balance
 subtitle: Both sides need to share the pain in the current crisis.
-on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5
+on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; catholics_spd += 3*(1-dissent) if year <= 1929; z_relation += 3 if year <= 1929
 
 Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces.
 
+[? if year <= 1929: The Roman Catholic Church, through papal nuncio Eugenio Pacelli, expresses approval of our concilliatory efforts and hope that the rift between social classes will soon be mended. ?]
 
 
 # options: support the workers in their demands, pushing back against the employers.
