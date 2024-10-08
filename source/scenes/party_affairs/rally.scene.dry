@@ -91,12 +91,17 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @pacifism: Opposing war, nationalism, and militarism at all costs.
 - @wtb: Support the WTB plan!
 - @local: A mixture of various local and national concerns that resonate most with the audience.
+- @bashfash: Fighting the Nazis wherever we find them!
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
+on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2; eat_the_rich += 1 if eat_the_rich <= 3
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+
+[? if eat_the_rich == 2: At one point, someone in the crowd yells "eat the rich". The conservative papers denounce it as a call to violence. ?]
+[? if eat_the_rich == 3: Halfway through one of the speeches, the crowd starts chanting "eat the rich". The conservative papers denounce this inspired moment as proletarian barbarity. ?]
+[? if eat_the_rich >= 4: As is traditional at this point, our speakers call upon the crowd to eat the rich. As always, conservative papers denounce us as degenerate cannibals. ?][? if rich_eaten: They are not completely wrong. ?]
 
 @welfare
 on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
@@ -114,7 +119,7 @@ Our speakers defend the republican system and rail against the monarchists and a
 @pacifism
 on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_spd += 4*(1 - dissent) if pacifism >= 3; unemployed_spd += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_spd += 4*(1-dissent) if pacifism >= 3
 
-Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
+Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War. [? if military_rearmed: Our commitment to the rearmament undercuts the effectiveness of our message. ?]
 
 [? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military. ?]
 [? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
@@ -130,3 +135,9 @@ The WTB plan has become a popular rallying cry for our party. The workers are ea
 on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_middle_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent);
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.
+
+@bashfash
+view-if: nazi_urgency > 1 or strife >= 3
+on-arrival: nazi_urgency += 1; neorevisionist_strength += 8; neorevisionist_dissent -= 8; rb_strength += 20; spd_hostile += 1; workers_spd += 6*(1-dissent) if strife > 5; unemployed_spd += 3*(1-dissent) if strife > 5;
+
+Our speakers urge the crowd to join the Reichsbanner and fight the Nazis by any and all means necessary.
