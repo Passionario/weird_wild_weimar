@@ -13,6 +13,8 @@ card-image: img/portraits/SeveringCarl.jpg
 As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organizations.
 
 - @deport_hitler
+- @attack_hitler
+- @fabricate_hitler: Fabricate case against Hitler.
 - @ban_sa: Ban the SA.
 - @unban_sa: Unban the SA.
 - @persecute_sa
@@ -23,6 +25,15 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @unban_rfb: Unban the RFB.
 - @persecute_rfb
 - @root: Take no action for now.
+
+@fabricate_hitler
+subtitle: -1 resources
+choose-if: corrupt_interior >= 1 and resources > 0
+unavailable-subtitle: [? if corrupt_interior = 0: The Interior Ministry may be corrupt, but not in our favor. ?] [? if resources < 1: Not enough resources. ?]
+view-if: hitler_deported = 0 and hitler_dead = 0 and fabricate_far_right = 0
+on-arrival: resources -= 1; fabricate_far_right = 1
+
+Our corrupt investigators quickly fabricate a plausible criminal case against Hitler. Although it is unlikely to stand up to serious judicial scrutiny, it may suffice to obtain an arrest warrant from a cooperative judge.
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
