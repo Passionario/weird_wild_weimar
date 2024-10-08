@@ -17,6 +17,7 @@ go-to: deport_violence if sa_strength >= 200; deport_success if sa_strength < 20
 When the police approach, he is surrounded by his SA guards, preventing him from being extricated! We can attempt to force a confrontation, but that may have negative consequences. The Reichsbanner may also attempt to draw off the SA.
 
 - @force_approach: Force the approach!
+- @force_prejudice: Force the approach, with extreme prejudice!
 - @no_deport: Cancel the deportation.
 
 @force_approach
@@ -49,7 +50,7 @@ The confrontation ends with the police and Reichsbanner prevailing, capturing Hi
 In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
 
 @force_kill
-on-arrival: hitler_dead = 1; sa_strength = sa_strength*0.7; strife += 2; coalition_dissent +=1; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Goebbels"
+on-arrival: hitler_dead = 1; sa_strength = sa_strength*0.7; strife += 2; coalition_dissent +=1; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; rural_nsdap -= 6; unemployed_nsdap -= 6; coup_progress += 2; nsdap_leader = "Goebbels"
 achievement: untergang
 
 The confrontation escalates into an all-out firefight between the police, the Reichsbanner, and the right-wing militias. The final casualty count amounts to hundreds of wounded and dozens of fatalities, the latter including Hitler himself. The press blames the massacre on us, but perhaps this blood price will be enough to forestall worse massacres.
@@ -63,6 +64,24 @@ achievement: deport_hitler
 Somehow, the plan worked! There was minimal resistance to Hitler's deportation. This is a sign of weakness, and his physical distance makes organizing difficult, impeding the Nazi effort to win more votes.
 
 In Hitler's absence, Joseph Goebbels has become the temporary leader of the Nazi party, with substantial influence from Hermann Göring.
+
+@force_prejudice
+choose-if: (rb_militancy + prussian_police_militancy) <= 1.5
+unavailable-subtitle: Our units and the police don't have enough guns between them.
+on-arrival: {!
+var total_allied_strength = Q.rb_strength*Q.rb_militancy + Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
+var enemy_strength = Q.sa_strength*Q.sa_militancy;
+var firepower = Q.rb_militancy + Q.sa_militancy + Q.prussian_police_militancy
+console.log('Deporting Hitler - force approach');
+console.log(total_allied_strength, enemy_strength);
+
+if (total_allied_strength > enemy_strength) {
+    Q.deportation_success = 1;
+} else {
+    Q.deportation_success = 0;
+}
+!}
+go-to: force_fail if deportation_success == 0; force_kill if deportation_success = 1
 
 @no_deport
 go-to: root
