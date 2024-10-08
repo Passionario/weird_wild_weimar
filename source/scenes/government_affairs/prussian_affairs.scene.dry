@@ -13,7 +13,7 @@ Prussia, by far the largest and most important state in Germany, is governed by 
 We can enact policies in Prussia.
 
 - @police_loyalty: Bolster the loyalty of the police.
-- @bribe_police: Use bribery and nepotism to corrupt the police.
+- @bribe_police: Use nepotism to corrupt the police.
 - @police_strength: Recruit additional police.
 - @arm_police: Arm the police.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
