@@ -28,7 +28,6 @@ Q.month_actions = 0;
 
 //Unimplemented Mod Stuff
 Q.infodump = 0;
-Q.hitler_dead = 0;
 Q.catholic_strike = 0;
 Q.privatize_welfare = 0;
 Q.disband_police = 0;
@@ -48,6 +47,8 @@ Q.olympics_team = 0;
 Q.olympics_bribe = 0;
 Q.olympics_won = 0;
 Q.usa_soc = 0;
+Q.attack_hitler_seen = 0;
+Q.hitler_dead = 0;
 Q.disband_military = 0;
 Q.reichstag_burn = 0;
 Q.military_rearmed = 0;
