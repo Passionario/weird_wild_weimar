@@ -13,6 +13,8 @@ The Nazi SA has disrupted our rally! Their street troops are preventing us from 
 
 - @police_protect: Call the police to protect our rally.
 - @rb_protect: Use the Reichsbanner to protect our rally.
+- @together_protect: Get the police and Reichsbanner to coordinate defense.
+- @rfb_protect: Team up with KPD for the rally and its protection.
 - @cancel: Cancel the rally.
 
 @police_protect
@@ -30,6 +32,21 @@ on-arrival: strife += 1; workers_nsdap += 3
 
 Unfortunately, the police were unable or unwilling to hold back the SA mob. The Nazis have won this show of strength.
 
+@together_protect
+view-if: spd_prussia == 1 and police_rb_team = 1
+on-arrival: together_protect_success = prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2 + rb_strength*rb_militancy - sa_militancy*sa_strength;
+go-to: together_protect_win if together_protect_success >= 0; together_protect_lose if together_protect_success < 0
+
+@together_protect_win
+go-to: main_rally
+
+The police and the Reichsbanner successfully protected our rally, so it can go ahead as usual.
+
+@together_protect_lose
+on-arrival: strife += 1; workers_nsdap += 4; rb_strength -= 30
+
+Unfortunately, even the combined effort of the police and Reichsbanner was not enough to hold back the SA mob. The Nazis have won this show of strength.
+
 @rb_protect
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy; strife += 1
 go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
@@ -43,6 +60,21 @@ The Reichsbanner has successfully protected our rally against the SA! Our meetin
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
 Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis have won this show of strength.
+
+@rfb_protect
+view-if: rfd_rb_team >= 1 and kpd_relation >= 55
+on-arrival: rfb_success = rb_strength*rb_militancy + rfb_strength*rfb_militancy - sa_strength*sa_militancy; strife += 1
+go-to: rfb_protect_win if rfb_success >= 0; rfb_protect_lose if rfb_success < 0
+
+@rfb_protect_win
+on-arrival: workers_kpd += 2; unemployed_kpd += 1; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
+
+The Communists have helped the Reichsbanner to protect our rally against the SA! In return, we have agreed to focus our rally on the class struggle of the proletariat against the bourgeoisie. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+
+@rfb_protect_lose
+on_arrival: kpd_relation -= 2; rfb_strength -= 30; rb_strength -= 30; workers_nsdap += 4
+
+Unfortunately, even the combined effort of RFB and Reichsbanner was not enough to hold back the SA mob. The Nazis have won this show of strength.
 
 @cancel
 on-arrival: workers_nsdap += 3;
