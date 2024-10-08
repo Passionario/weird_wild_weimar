@@ -7,7 +7,7 @@ choose-if: corrupt_judiciary >= 1 and (corrupt_prussian_police >= 1 or prussian_
 Is it really that simple? His supporters will react violently to this attempt, and we must be ready to respond in kind. And even if the attack does succeed, won't the truth behind the allegations come out eventually once our corrupt accomplices in the judiciary and police sell us out? Won't we be inviting bloody reprisals against our own leadership? And, almost all people consider this to be an anti-democratic abuse of power, abusing the law and order to kill a political opponent.
 
 - @attack_violence: Get him!
-- @no_deport: No, we must not.
+- @no_attack: No, we must not.
 
 @attack_violence
 on-arrival: {!
@@ -39,3 +39,7 @@ achievement: untergang
 Just as we intended, the confrontation escalates into an all-out firefight between the police, the Reichsbanner, and the right-wing militias. The final casualty count amounts to hundreds of wounded and dozens of fatalities, the latter including Hitler himself. The press blames the massacre on us, but perhaps this blood price will be enough to forestall worse massacres.
 
 Following Hitler's death, Joseph Goebbels has become the interim leader of the Nazi party, with substantial influence from Hermann Göring.
+
+@no_attack
+
+We need to make sure that we're ready because we will only get one shot at this. 
