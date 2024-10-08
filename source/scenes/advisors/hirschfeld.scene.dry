@@ -7,19 +7,20 @@ new-page: true
 
 = Magnus Hirschfeld
 
-Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an advocate for the rights of sexual minorities.
+Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an effective advocate for the rights of sexual minorities. 
 
 
 - @homosexual_rights_
 - @womens_rights_
+- @attack_and_destroy_god
 - @root: Return to main
 
 
 @homosexual_rights_
 title: Homosexual rights
 subtitle: Enact policy that supports homosexual rights.
-choose-if: advisor_action_timer = 0 and spd_in_government and progressive_coalition >= 50
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if progressive_coalition < 50 : We do not have the votes to enact these policies. ?]
+choose-if: advisor_action_timer = 0 and spd_in_government and progressive_coalition >= 40
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if progressive_coalition < 40 : We do not have the votes to enact these policies. ?]
 on-arrival: advisor_action_timer = 6; homosexual_rights_timer -= 11
 go-to: homosexual_rights
 
@@ -31,3 +32,10 @@ choose-if: advisor_action_timer = 0 and spd_in_government
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?]
 on-arrival: advisor_action_timer = 6; womens_rights_timer -= 10
 go-to: womens_rights
+
+@attack_and_destroy_god
+title: Attack and destroy God
+view-if: trans_rights = 1 and trans_progress >= 2
+on-arrival: advisor_action_timer = 6
+
+This option is not available yet.
