@@ -13,7 +13,9 @@ Prussia, by far the largest and most important state in Germany, is governed by 
 We can enact policies in Prussia.
 
 - @police_loyalty: Bolster the loyalty of the police.
+- @bribe_police: Use bribery and nepotism to corrupt the police.
 - @police_strength: Recruit additional police.
+- @arm_police: Arm the police.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @ban_sa: Ban the SA, the Nazi paramilitary group.
 - @unban_sa: Reverse the SA ban.
@@ -35,10 +37,22 @@ The police have historically been overrun with reactionaries, and we are trying 
 
 Current police loyalty: [+ prussian_police_loyalty : loyalty +].
 
+@bribe_police
+on-arrival: prussian_police_loyalty -= 0.1; corrupt_prussian_police += 1; spd_total_corruption += 1
+
+Every police force has its fair share of corruption, and Prussian police is no different. We ensure that our loyalists get promoted into higher ranks and get bonuses. 
+
 @police_strength
-on-arrival: prussian_police_strength += 20; prussian_police_strength *= 1.1; prussian_police_loyalty += 0.025
+on-arrival: prussian_police_strength += 20; prussian_police_loyalty += 0.025
 
 We have increased the size of the Prussian police. [? if prussian_police_strength >= 200 and prussian_police_strength < 500: It is now a substantial force. ?][? if prussian_police_strength >= 500: It is now a force to be reckoned with. ?]
+
+@arm_police
+choose-if: budget >= 1 and finance_minister_party == "SPD"
+unavailable-subtitle: [? if budget < 1: Not enough budget. ?] [? if finance_minister_party != "SPD": We need control of the Finance Ministry to perform a budget transfer to Prussia. ?]
+on_arrival: budget -= 1; prussian_police_loyalty += 0.1; coalition_dissent += 1; kpd_coalition_dissent += 1; prussian_police_militancy += 0.2; prussian_police_strength += 50; capital_strike += 1; coup_progress += 0.5
+
+The Prussian police now has more guns and more boots on the ground, and the rest of Germany is paying for it.
 
 @bureaucracy
 on-arrival: prussian_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
