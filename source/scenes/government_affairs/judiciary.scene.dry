@@ -35,7 +35,7 @@ We try to remove the most obviously biased and corrupt jurists, while leaving mo
 subtitle: -1 resources
 unavailable-subtitle: Not enough resources.
 choose-if: resources >= 1
-on-arrival: resources -= 1; democratization -= 2; coalition_dissent -= 1 if in_grand_coalition == 1; workers_spd -= 5; judicial_reform -= 1; pro_republic -= 4; coup_progress -= 1
+on-arrival: resources -= 1; democratization -= 2; coalition_dissent -= 1 if in_grand_coalition == 1; workers_spd -= 5; judicial_reform -= 1; pro_republic -= 4; coup_progress -= 1; corrupt_judiciary += 1
 
 We investigate the most corrupt jurists and make discreet contributions to ensure that their rulings are favorable to us and our coalition allies.
 
