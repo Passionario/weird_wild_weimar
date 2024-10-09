@@ -24,7 +24,7 @@ unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist
 choose-if: left_strength > reformist_strength + neorevisionist_strength + 10 and rb_militancy >= 0.25
 on-arrival: nationalization_progress += 1; coup_progress += 6; unemployed -= 2; workers_spd += 10*(1-dissent); unemployed_spd += 10*(1-dissent); coalition_dissent += 3; dvp_relation -= 8; workers_nsdap -= 8*(1-dissent); unemployed_nsdap -= 8*(1-dissent); left_strength += 15; reformist_dissent += 15; centrist_dissent += 10; left_dissent -= 10; factory_takeovers += 1; prussian_police_loyalty -= 0.2; new_middle_spd -= 10; old_middle_spd -= 10; catholic_strike += 6
 
-If the capitalists are going to take our food, then we must must make them our food. We have empowered the workers to kill and eat capitalists, and take full control of their factories. 
+If the capitalists are going to take our food, then they must become our food. We have empowered the workers to kill and eat capitalists, and take full control of their factories. 
 
 @condemn
 title: Disavow all responsibility and condemn this atrocity.
