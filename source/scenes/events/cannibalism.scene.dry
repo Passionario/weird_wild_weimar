@@ -18,7 +18,7 @@ What can we do?
 - @condemn
 - @nothing
 
-@seize
+@devour
 title: Empower workers to seize the factories - and their owners!
 unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist_strength + 10 : The bulk of the party does not support this radical action. ?] [? if rb_militancy < 0.25 : If we increased the strength of our paramilitary forces, perhaps we could do this. ?]
 choose-if: left_strength > reformist_strength + neorevisionist_strength + 10 and rb_militancy >= 0.25
