@@ -43,6 +43,7 @@ Q.olympics_bribe = 0;
 Q.olympics_won = 0;
 Q.usa_soc = 0;
 Q.attack_hitler_seen = 0;
+Q.redalert = 0;
 Q.hitler_dead = 0;
 Q.disband_military = 0;
 Q.reichstag_burn = 0;
