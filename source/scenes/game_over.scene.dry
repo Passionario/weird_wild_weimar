@@ -105,6 +105,12 @@ if (Q.factory_takeovers >= 2) {
 if (Q.blutmai && Q.altona_guilt) {
     this.achieve("sind_wir_die_bosen");
 }
+if (Q.redalert) {
+    this.achieve("roter_alarm_null");
+}
+if (Q.hitler_dead) {
+    this.achieve("untergang");
+}
 // Fehlende Zündung - prevent the Reichstag fire plot
 if (Q.reichstag_burn && Q.chancellor_party != "NSDAP") {
     this.achieve("fehlende_zundung");
