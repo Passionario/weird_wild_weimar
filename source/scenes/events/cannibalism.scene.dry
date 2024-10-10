@@ -7,7 +7,7 @@ on-arrival: workers_spd*= 0.9; new_middle_spd -= 6; old_middle_spd -= 6; unemplo
 tags: event
 achievement: burgherburger
 
-= WORKERS EAT BOSS!
+= "WORKERS EAT BOSS!"
 
 Our rhetoric has finally borne fruit. Some of the desperate workers have broken into a factory owner's house, killed him in front of his family, and proceeded to mutilate and devour his body. By the time the police arrived, his remains were barely recognizable as human. Everyone blames us for this tragedy.  
 
