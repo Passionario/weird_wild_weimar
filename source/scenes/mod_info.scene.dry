@@ -8,16 +8,30 @@ new-page: true
 
 "Two Steps Forward, One Leap Below" is an unofficial mod that lets you push certain initiatives beyond their intended limit and/or attempt unwise radical actions. It is neither historically accurate nor an endorsement of anything displayed therein.
 
+- @eatrich: Eat the Rich!
+- @killadolf: Kill Hitler + Government Corruption
 - @olympics: 1932 Los Angeles Olympics
 - @fighting: Streetfighting
 - @military_update: Military Policy + New Bad Ending
 - @funraising: Fundraising
-- @interior_update: Coalition flavor
+- @interior_update: Interior Police
 - @ironman: Changes to Historical Mode
 - @other_changes: Other changes
 - @plans: Plans for the mod
 - @ideas: Ideas and feedback
 - @root: Back
+
+@eatrich
+
+= EAT THE RICH!
+
+By popular demand, you can now add some cannibalism to your class struggle campaign. This dark path starts with some rallies, continues through government crisis points, and culminates with a troublesome headline.
+
+@killadolf
+
+= LET'S KILL HITLER!
+
+There are not one, but two ways of killing Hitler. One involves abusing the laws of the nation, the other requires abusing the laws of physics.
 
 @olympics
 
@@ -71,7 +85,7 @@ The limitations of Historical Mode are a separate setting now, in case you want 
 
 = Other Changes
 
-Added extra cosmetic feedback for repeatedly purging bureaucracy, and a small joke if you're choosing between economic plans while Hilferding is a minister.
+Added extra cosmetic feedback for repeatedly purging bureaucracy, new bonuses to Hirschfeld as an advisor, and a small joke if you're choosing between economic plans while Hilferding is a minister.
 
 - @modstuff: Back
 
@@ -79,11 +93,9 @@ Added extra cosmetic feedback for repeatedly purging bureaucracy, and a small jo
 
 = Future Plans
 
-1) Add the option to corrupt branches of the government for short-term gain and long-term pain
-2) Finally let y'all eat the rich and kill Hitler
-3) More outcomes for Catholic and progressive agendae
-4) Nightmare mode
-5) Augmented feedback mode
+1) More outcomes for Catholic and progressive agendae
+2) Nightmare mode
+3) Augmented feedback mode
 
 - @modstuff: Back
 
