@@ -8,7 +8,7 @@ tags: party_affairs; antifascism
 
 = Streetfighting
 
-Battles rage on the streets between the Nazi SA, nationalist Stahlhelm, communist Rotfrontkämpferbund (RFB), and our own Reichsbanner. In some parts of the country, conditions are nearing civil war levels, as dozens of people are killed each month.
+[? if rb_banned = 0: Battles rage on the streets between the Nazi SA, nationalist Stahlhelm, communist Rotfrontkämpferbund (RFB), and our own Reichsbanner. ?] [? if rb_banned = 0: Battles rage on the streets between the Nazi SA, nationalist Stahlhelm, and communist Rotfrontkämpferbund (RFB). Our own Reichbanner was banned and is no longer a part of this fight. ?] In some parts of the country, conditions are nearing civil war levels, as dozens of people are killed each month.
 
 We must do something to protect the workers against these predations.
 
@@ -22,7 +22,7 @@ We must do something to protect the workers against these predations.
 - @peace: Try to avoid all militant confrontations, as much as possible.
 - @truce_rfb: Try to make peace with the RFB.
 - @teamwork_rfb: Coordinate Reichbanner actions with the RFB.
-- @let_them_die: There is nothing we can do.
+- @let_them_die
 - @easy_discard
 
 @test_battle
@@ -114,6 +114,7 @@ max-visits: 2
 We are coordinating with the KPD, so that our respective paramilitaries can occasionally fight alongside each other in the future.
 
 @let_them_die
+title: There is nothing we can do.
 view-if: rb_banned = 1
 on-arrival: workers_spd -= 5; unemployed_spd -= 5; workers_kpd += 2; workers_nsdap += 3; unemployed_kpd += 2; unemployed_nsdap += 3; strife += 1; sa_strength += 50; neorevisionist_dissent += 10; neorevisionist_strength += 5
 
