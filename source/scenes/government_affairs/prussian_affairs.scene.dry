@@ -113,10 +113,10 @@ We have signed a Concordat between the Free State of Prussia and the Roman Catho
 @ban_rb
 title: Get the Reichsbanner banned.
 subtitle: All other groups came back stronger after getting banned and unbanned, so what if...?
-view-if: sa_ban_counter >= 1 and sa_unban_counter >= 1 and sh_ban_counter >= 1 and sh_unban_counter >= 1 and rfb_ban_counter >= 1 and rfb_unban_counter >= 1 and (not historical_mode) and rb_banned = 0
+view-if: sa_ban_counter >= 1 and sa_unban_counter >= 1 and sh_ban_counter >= 1 and sh_unban_counter >= 1 and rfb_ban_counter >= 1 and rfb_unban_counter >= 1 and (not historical_mode) and rb_banned = 0 and rb_ban_seen = 0
 unavailable-subtitle: We need enough secret loyalists in the judiciary for plausible deniability.
 choose-if: corrupt_judiciary >= 2
-on-arrival: rb_strength *= 0.5; rb_militancy -= 0.1; workers_spd -= 6; unemployed_spd -= 6; z_relation -= 5; dvp_relation -= 5; kpd_relation -= 2; workers_kpd -= 2; unemployed_kpd -= 2; pro_republic -= 8; workers_nsdap += 8; unemployed_nsdap += 8; rb_banned = 1; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.1; 
+on-arrival: rb_strength *= 0.5; rb_militancy -= 0.1; workers_spd -= 6; unemployed_spd -= 6; z_relation -= 5; dvp_relation -= 5; kpd_relation -= 2; workers_kpd -= 2; unemployed_kpd -= 2; pro_republic -= 8; workers_nsdap += 8; unemployed_nsdap += 8; rb_banned = 1; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.1; rb_ban_seen = 0
 achievement: eher_wie_das_reichsbanned
 max-visits: 1
 
@@ -124,6 +124,6 @@ The ban deals a grievous blow to Reichsbanner. Although we can still organize il
 
 @unban_rb
 view-if: rb_banned = 1
-on-arrival: rb_banned = 2; rb_strength += 20; 
+on-arrival: rb_banned = 0; rb_strength += 20
 
 Reichsbanner is no longer banned, but barely anyone rejoins it. Our gambit has failed and we have only ourselves to blame.
