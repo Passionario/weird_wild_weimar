@@ -106,7 +106,7 @@ view-if: sa_ban_counter >= 1 and sa_unban_counter >= 1 and sh_ban_counter >= 1 a
 unavailable-subtitle: We need enough secret loyalists in the judiciary for plausible deniability.
 choose-if: corrupt_judiciary >= 2
 on-arrival: rb_strength *= 0.5; rb_militancy -= 0.1; workers_spd -= 6; unemployed_spd -= 6; z_relation -= 5; dvp_relation -= 5; kpd_relation -= 2; workers_kpd -= 2; unemployed_kpd -= 2; pro_republic -= 8; workers_nsdap += 8; unemployed_nsdap += 8; rb_banned = 1; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.1; 
-achieve: eher_wie_das_reichsbanned
+achievement: eher_wie_das_reichsbanned
 max-visits: 1
 
 The ban deals a grievous blow to Reichsbanner. Although we can still organize illegally, most of our members abide by the law. The Nazis take this as one more reason why the Socialists are enemies of the nation.
@@ -115,4 +115,4 @@ The ban deals a grievous blow to Reichsbanner. Although we can still organize il
 view-if: rb_banned = 1
 on-arrival: rb_banned = 0; rb_strength += 20; 
 
-Reichsbanner is no longer banned, but barely anyone rejoins it. 
+Reichsbanner is no longer banned, but barely anyone rejoins it. Our gambit has failed and we have only ourselves to blame.
