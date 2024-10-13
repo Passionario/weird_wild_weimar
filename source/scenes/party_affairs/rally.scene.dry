@@ -138,7 +138,7 @@ on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_m
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.
 
 @bashfash
-view-if: nazi_urgency > 1 or strife >= 3
+view-if: (nazi_urgency > 1 or strife >= 3) and rb_banned != 1
 on-arrival: nazi_urgency += 1; neorevisionist_strength += 8; neorevisionist_dissent -= 8; rb_strength += 20; spd_hostile += 1; workers_spd += 6*(1-dissent) if strife > 5; unemployed_spd += 3*(1-dissent) if strife > 5;
 
 Our speakers urge the crowd to join the Reichsbanner and fight the Nazis by any and all means necessary.
