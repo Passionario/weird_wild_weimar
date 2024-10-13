@@ -33,7 +33,7 @@ on-arrival: strife += 1; workers_nsdap += 3
 Unfortunately, the police were unable or unwilling to hold back the SA mob. The Nazis have won this show of strength.
 
 @together_protect
-view-if: spd_prussia == 1 and police_rb_team = 1
+view-if: spd_prussia == 1 and police_rb_team = 1 and rb_banned != 1
 on-arrival: together_protect_success = prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2 + rb_strength*rb_militancy - sa_militancy*sa_strength;
 go-to: together_protect_win if together_protect_success >= 0; together_protect_lose if together_protect_success < 0
 
@@ -48,6 +48,7 @@ on-arrival: strife += 1; workers_nsdap += 4; rb_strength -= 30
 Unfortunately, even the combined effort of the police and Reichsbanner was not enough to hold back the SA mob. The Nazis have won this show of strength.
 
 @rb_protect
+view-if: rb_banned != 1
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy; strife += 1
 go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 
@@ -62,7 +63,7 @@ on-arrival: workers_nsdap += 3; rb_strength -= 50
 Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis have won this show of strength.
 
 @rfb_protect
-view-if: rfd_rb_team >= 1 and kpd_relation >= 55
+view-if: rfd_rb_team >= 1 and kpd_relation >= 55 and  and rb_banned != 1
 on-arrival: rfb_success = rb_strength*rb_militancy + rfb_strength*rfb_militancy - sa_strength*sa_militancy; strife += 1
 go-to: rfb_protect_win if rfb_success >= 0; rfb_protect_lose if rfb_success < 0
 
