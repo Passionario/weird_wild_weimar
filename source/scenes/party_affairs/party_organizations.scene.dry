@@ -58,6 +58,7 @@ on-arrival: resources -= 1; cultural_organizations += 1; olympics += 2; olympics
 Thanks to our considerable investment in Worker's Sports, we can focus on preparing our best athletes for the 1932 Olympics. 
 
 @rb
+view-if: rb_banned != 1
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
