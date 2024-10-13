@@ -65,8 +65,8 @@ view-if: sh_banned == 0
 [? if president == "Hindenburg": Banning the Stahlhelm weakens our relationship with President Hindenburg, as well as the political right and the police. ?][? if president != "Hindenburg": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight.
 
 @unban_sh
-view-if: sh_banned = 1; sh_unban_counter += 1
-on-arrival: sh_banned = 0; sh_strength += 100
+view-if: sh_banned = 1
+on-arrival: sh_banned = 0; sh_strength += 100; sh_unban_counter += 1
 
 The Stahlhelm is no longer banned.
 
