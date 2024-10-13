@@ -32,13 +32,6 @@ Q.catholic_strike = 0;
 Q.privatize_welfare = 0;
 Q.disband_police = 0;
 Q.spd_hostile = 0;
-Q.sa_ban_counter = 0;
-Q.sh_ban_counter = 0;
-Q.rfb_ban_counter = 0;
-Q.sa_unban_counter = 0;
-Q.sh_unban_counter = 0;
-Q.rfb_unban_counter = 0;
-Q.rb_banned = 0;
 Q.bans_banned = 0;
 
 // Implemented Mod Stuff
@@ -69,6 +62,15 @@ Q.spd_total_corruption = 0;
 Q.trans_progress = 0;
 Q.eat_the_rich = 0;
 Q.rich_eaten = 0;
+Q.sa_ban_counter = 0;
+Q.sh_ban_counter = 0;
+Q.rfb_ban_counter = 0;
+Q.sa_unban_counter = 0;
+Q.sh_unban_counter = 0;
+Q.rfb_unban_counter = 0;
+Q.rb_banned = 0;
+Q.rb_ban_seen = 0;
+
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
