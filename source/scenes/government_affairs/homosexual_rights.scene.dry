@@ -1,7 +1,7 @@
 title: Homosexual Rights
 new-page: true
 is-card: true
-card-image: img/hirschfeld.jpg
+card-image: img/freundin.jpg
 frequency: 25
 max-visits: 3
 view-if: spd_in_government == 1 and ((progressive_coalition >= 50) or (hirschfeld_advisor = 1 and progressive_coalition >= 40)) and chancellor_party == "SPD" and homosexual_rights_timer == 0 and homosexual_rights < 3
