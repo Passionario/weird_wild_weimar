@@ -431,6 +431,8 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_roter_alarm_null: **Roter Alarm Null** - discover and complete an impossible plot. ?]
 
+// #[? if game_achievement_eher_wie_das_reichsbanned: **Eher wie das Reichsbanned** - ban the Reichsbanner. ?]
+
 = Completed Achievements Overall
 
 
