@@ -89,9 +89,9 @@ Despite all our efforts, our investigations into the far left have failed to tur
 
 @fabricate_hitler
 subtitle: -1 resources
-choose-if: corrupt_interior >= 1 and resources > 0
-unavailable-subtitle: [? if corrupt_interior = 0: The Interior Ministry may be corrupt, but not in our favor. ?] [? if resources < 1: Not enough resources. ?]
-view-if: hitler_deported = 0 and hitler_dead = 0 and fabricate_far_right = 0
+choose-if: resources > 0
+unavailable-subtitle: [? if resources < 1: Not enough resources. ?]
+view-if: hitler_deported = 0 and hitler_dead = 0 and fabricate_far_right = 0 and corrupt_interior >= 1
 on-arrival: resources -= 1; fabricate_far_right = 1
 
 Our corrupt investigators quickly fabricate a plausible criminal case against Hitler. Although it is unlikely to stand up to serious judicial scrutiny, it may suffice to obtain an arrest warrant from a cooperative judge.
