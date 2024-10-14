@@ -16,6 +16,7 @@ We can enact policies in Prussia.
 - @bribe_police: Use nepotism to corrupt the police.
 - @police_strength: Recruit additional police.
 - @arm_police: Arm the police.
+- @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
 - @ban_sa: Ban the SA, the Nazi paramilitary group.
 - @unban_sa: Reverse the SA ban.
@@ -45,14 +46,20 @@ on-arrival: prussian_police_loyalty -= 0.05; corrupt_prussian_police += 1; spd_t
 Every police force has its fair share of corruption, and Prussian police is no different. We ensure that our loyalists get promoted into higher ranks and get bonuses. 
 
 @police_strength
-on-arrival: prussian_police_strength += 20; prussian_police_loyalty += 0.025
+on-arrival: prussian_police_strength += 20; prussian_police_strength *= 1.05; prussian_police_loyalty += 0.025
 
 We have increased the size of the Prussian police. [? if prussian_police_strength >= 200 and prussian_police_strength < 500: It is now a substantial force. ?][? if prussian_police_strength >= 500: It is now a force to be reckoned with. ?]
+
+@prussian_police_training
+view-if: spd_prussia == 1 and prussian_police_loyalty > 0.5 and rb_banned = 0
+on-arrival: rb_militancy += (0.1*(prussian_police_loyalty)); sa_strength += 50; police_rb_train += 1; police_rb_team = 1; police_militancy += 0.05
+
+The Reichsbanner and the loyal sections of the Prussian police are learning to effectively fight alongside each other.
 
 @arm_police
 choose-if: budget >= 1 and finance_minister_party == "SPD"
 unavailable-subtitle: [? if budget < 1: Not enough budget. ?] [? if finance_minister_party != "SPD": We need control of the Finance Ministry to perform a budget transfer to Prussia. ?]
-on_arrival: budget -= 1; prussian_police_loyalty += 0.1; coalition_dissent += 1; kpd_coalition_dissent += 1; prussian_police_militancy += 0.2; prussian_police_strength += 50; capital_strike += 0.5; coup_progress += 0.5
+on_arrival: budget -= 1; prussian_police_loyalty += 0.1; coalition_dissent += 0.5; kpd_coalition_dissent += 1; prussian_police_militancy += 0.2; prussian_police_strength += 50; capital_strike += 0.25; coup_progress += 0.5
 
 The Prussian police now has more guns and more boots on the ground, and the rest of Germany is paying for it.
 
