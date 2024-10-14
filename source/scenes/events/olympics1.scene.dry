@@ -52,17 +52,16 @@ on-arrival: olympics_readiness += 2; resources -= 1
 go-to: bestluck if olympics_readiness >= 4; goodluck if olympics_readiness == 3; badluck if olympics_readiness == 2
 
 @corrupt
-choose-if: corrupt_interior >= 1
-unavailable-subtitle: To be implemented in Corruption update.
+view-if: corrupt_interior >= 1
 on-arrival: olympics_bribe = 1
-go-to: corrupt_work if interior_police_loyalty >= 0.65; corrupt_fail if interior_police_loyalty < 0.65
+go-to: corrupt_work if (corrupt_interior >= 1 or interior_police_loyalty >= 0.6); corrupt_fail if (corrupt_interior = 0 and interior_police_loyalty < 0.6)
 
 @corrupt_work
-on-arrival: olympics_team = 2; olympics_bribe = 1; interior_police_loyalty -=0.1; left_dissent -= 2; labor_dissent -= 2; center_dissent -= 2; reformist_dissent -= 2; neorevisionist_dissent -= 2
+on-arrival: olympics_team = 2; olympics_bribe = 1; interior_police_loyalty -=0.05; left_dissent -= 2; labor_dissent -= 2; center_dissent -= 2; reformist_dissent -= 2; neorevisionist_dissent -= 2
 
 Our clandestine efforts bear fruit! SPD athletes are now represented in the German Olympics team. 
 
-However, our meddling has attracted the attention of the interior police. While our loyalists are able to keep the scandal under wraps for now, it has greatly weakened our relationship with them.
+However, our meddling has attracted the attention of the interior police. While our loyalists are able to keep the scandal under wraps for now, it has weakened our relationship with them.
 
 @corrupt_fail
 on-arrival: olympics_team = 0; olympics_readiness = 0; olympics_bribe = 0; interior_police_loyalty -=0.15; left_dissent += 6; labor_dissent += 6; center_dissent += 6; reformist_dissent += 6; neorevisionist_dissent += 6; coalition_dissent += 1; workers_spd*= 0.9; new_middle_spd -= 4; old_middle_spd -= 4; unemployed_spd*=0.9; rural_spd -= 3; pro_republic -= 5; z_relation -= 5; dvp_relation -= 5; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 5; old_middle_nsdap += 5; rural_nsdap += 5
