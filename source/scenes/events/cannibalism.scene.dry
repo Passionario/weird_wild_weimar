@@ -3,7 +3,7 @@ subtitle: The headline is troublesome...
 view-if: eat_the_rich >= 10 and rich_eaten = 0
 new-page: true
 max-visits: 1
-on-arrival: workers_spd*= 0.9; new_middle_spd -= 6; old_middle_spd -= 6; unemployed_spd*=0.9; pro_republic -= 10; rich_eaten = 1; z_relation -= 10; dvp_relation -= 10; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 15; old_middle_nsdap += 15; catholics_z += 15; catholics_spd -= 15 
+on-arrival: workers_spd*= 0.9; new_middle_spd -= 6; old_middle_spd -= 6; unemployed_spd*=0.9; pro_republic -= 10; rich_eaten = 1; z_relation -= 10; dvp_relation -= 10; ddp_relation -= 10; kpd_relation += 5; workers_nsdap += 5; unemployed_nsdap += 5; new_middle_nsdap += 15; old_middle_nsdap += 15; catholics_z += 15; catholics_spd -= 15 
 tags: event
 achievement: burgherburger
 
@@ -22,7 +22,7 @@ What can we do?
 title: Empower workers to seize the factories - and their owners!
 unavailable-subtitle: [? if left_strength <= reformist_strength + neorevisionist_strength + 10 : The bulk of the party does not support this radical action. ?] [? if rb_militancy < 0.25 : If we increased the strength of our paramilitary forces, perhaps we could do this. ?]
 choose-if: left_strength > reformist_strength + neorevisionist_strength + 10 and rb_militancy >= 0.25
-on-arrival: nationalization_progress += 1; coup_progress += 6; unemployed -= 2; workers_spd += 10*(1-dissent); unemployed_spd += 10*(1-dissent); coalition_dissent += 3; dvp_relation -= 8; workers_nsdap -= 8*(1-dissent); unemployed_nsdap -= 8*(1-dissent); left_strength += 15; reformist_dissent += 15; centrist_dissent += 10; left_dissent -= 10; factory_takeovers += 1; prussian_police_loyalty -= 0.2; new_middle_spd -= 10; old_middle_spd -= 10; catholic_strike += 6
+on-arrival: nationalization_progress += 1; coup_progress += 6; unemployed -= 2; workers_spd += 10*(1-dissent); unemployed_spd += 10*(1-dissent); coalition_dissent += 3; kpd_coalition_dissent = 0; z_relation -= 10; dvp_relation -= 10; ddp_relation -= 10; kpd_relation += 15; workers_nsdap -= 8*(1-dissent); unemployed_nsdap -= 8*(1-dissent); left_strength += 15; reformist_dissent += 15; centrist_dissent += 10; left_dissent -= 10; factory_takeovers += 1; prussian_police_loyalty -= 0.2; new_middle_spd -= 10; old_middle_spd -= 10; catholic_strike += 6
 
 If the capitalists are going to take our food, then they must become our food. We have empowered the workers to kill and eat capitalists, and take full control of their factories. 
 
