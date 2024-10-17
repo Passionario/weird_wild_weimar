@@ -422,7 +422,7 @@ on-arrival: president = nsdap_candidate; chancellor = "Hitler" if hitler_dead = 
 
 [? if nsdap_candidate == "Hitler" : Adolf Hitler of the NSDAP has won the presidency. He wastes no time in consolidating power. ?]
 [? if nsdap_candidate != "Hitler" and hitler_dead = 0 : The NSDAP candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The Nazis waste no time in consolidating power. ?]
-[? if nsdap_candidate != "Hitler" and hitler_dead = 1 : The NSDAP candidate [+ president +] has won. The first action President [+ president +] takes is legally change his name to Adolf Hitler, and appointing himself chancellor. The Nazis waste no time in consolidating power. ?]
+[? if nsdap_candidate != "Hitler" and hitler_dead = 1 : The NSDAP candidate [+ president +] has won. The first action President [+ president +] takes is changing his legal name to Adolf Hitler, in commemoration of his predecessor, and appointing himself chancellor. The Nazis waste no time in consolidating power. ?]
 
 - @hitler_takes_power: What do we do now?
 
