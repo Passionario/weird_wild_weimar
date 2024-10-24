@@ -93,7 +93,7 @@ We are continuing to invest in our radio stations. Both commercial and political
 
 @radio_boom
 title: We will use our extensive radio network to transmit the detonation signal.
-view-if: radio > 3 and investigate_far_right >= 5 and hitler_dead == 0
+view-if: radio > 3 and investigate_far_right >= 6 and hitler_dead == 0
 on_arrival: redalert = 1; hitler_dead = 1; sa_strength = sa_strength/2; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; unemployed_nsdap -= 10; coup_progress -= 2; nsdap_leader = "Goebbels"; catholics_nsdap -= 10
 achievement: roter_alarm_null; untergang
 
