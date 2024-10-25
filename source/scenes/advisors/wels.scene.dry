@@ -38,11 +38,11 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; ce
 We have enforced party discipline to reduce dissent across all factions.
 
 @emergency_fundraising
-title: Emergency Fundraising
+title: Fundraising
 view-if: difficulty < 1 and dues > 0
-subtitle: An emergency infusion of resources.
+subtitle: Collect, increase or reduce dues.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; resources += dues
+on-arrival: advisor_action_timer = 6
+go-to: fundraising
 
-We have gained +[+ dues +] resources.
