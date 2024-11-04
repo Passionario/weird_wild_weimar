@@ -70,7 +70,7 @@ Q.sh_unban_counter = 0;
 Q.rfb_unban_counter = 0;
 Q.rb_banned = 0;
 Q.rb_ban_seen = 0;
-
+Q.nightmare = 0;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
@@ -670,8 +670,7 @@ on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformi
 go-to: 1928_main
 
 @1928_nightmare
-subtitle: [? if infodump >= 1 : No resources, no fundraising, everyone hates you. ?] Not implemented yet.
-choose-if: year == 2025
+subtitle: [? if infodump >= 1 : No resources, no fundraising, everyone hates you. ?] Don't do this.
 on-arrival: {!
 Q.difficulty = 2;
 Q.resources = 0;
@@ -702,10 +701,11 @@ Q.sh_strength += 150;
 Q.rural_dnvp += 15;
 Q.rural_nsdap += 10;
 Q.unemployed_nsdap += 18;
+Q.nightmare = 1;
 !}
 go-to: 1928_main
 
-Good luck. You're gonna need it.
+May history have mercy on us, for the world will not.
 
 @1928_main
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/LiedDerPompadour.mp3
