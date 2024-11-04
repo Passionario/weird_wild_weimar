@@ -672,6 +672,8 @@ go-to: 1928_main
 
 @1928_nightmare
 subtitle: [? if infodump >= 1 : No resources, no fundraising, everyone hates you. ?] Don't do this.
+unavailable-subtitle: Soon.
+choose-if: year == 2025
 on-arrival: {!
 Q.difficulty = 2;
 Q.resources = 0;
