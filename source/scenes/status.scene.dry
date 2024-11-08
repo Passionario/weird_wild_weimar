@@ -178,8 +178,8 @@ Political Catholics: SPD: [+ catholics_spd_normalized +]%, Z: [+ catholics_z_nor
 
 Support for the Republic: [+ pro_republic +]%
 
-Support for pacifism: [+ pacifism +]%
-
 Support for internationalism: [+ (100-nationalism) +]%
 
 Support for socialism: [+ socialism +]%
+
+Support for pacifism: [+ pacifism +]%
