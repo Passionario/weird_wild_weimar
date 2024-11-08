@@ -112,7 +112,7 @@ if (Q.month_actions >= 1) {
             Q[timer+'_timer'] -= 1;
         }
     }
-    // TODO: append to historical party support records
+    // append to historical party support records
     var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
     for (var party of Q.parties) {
         party_support_results[party] = Q[party + '_normalized']*100;
@@ -135,26 +135,46 @@ if (Q.month_actions >= 1) {
     }
     if (Q.budget <= -5 && Q.inflation < 10) {
         Q.inflation += 0.3;
-        if (Q.unemployed >= 15) {
-            Q.inflation -= 0.1;
+            Q.rural_nsdap += 4/12;
         }
     }
-    // deflation is bad
-    if (Q.inflation < -0.5 && Q.inflation > -5 && Q.unemployed < 15) {
-        Q.unemployed += 0.2;
-    }
-    if (Q.inflation <= -5 && Q.unemployed < 20) {
-        Q.unemployed += 0.3;
-    }
-    // update opinions based on economy
-    if (Q.unemployed > 15 && Q.pro_republic > 40) {
-        Q.pro_republic -= 1;
-    }
-    if (Q.unemployed > 30 && Q.pro_republic > 20) {
-        Q.pro_republic -= 1;
-    }
-    if (Q.inflation > 8 && Q.pro_republic > 40) {
-        Q.pro_republic -= 1;
+    if (Q.year == 1932) {
+        Q.old_middle_other -= 7/12;
+        Q.rural_other -= 7/12;
+        Q.old_middle_nsdap += 7/12;
+        Q.rural_nsdap += 7/12;
+        Q.unemployed_nsdap += 4/12;
+        if (!Q.works_program) {
+            Q.unemployed += 6/12;
+            Q.inflation -= 2/12;
+            Q.catholics_z += 2/12;
+            Q.workers -= 4/12;
+            Q.rural_dnvp -= 4/12;
+            Q.rural_nsdap += 8/12;
+            Q.new_middle_nsdap += 10/12;
+            Q.old_middle_nsdap += 10/12;
+            Q.unemployed_nsdap += 8/12;
+            Q.unemployed_kpd += 2/12;
+            Q.workers_nsdap += 3/12;
+            Q.workers_kpd += 3/12;
+            Q.sa_strength += 200/12;
+            Q.new_middle_dnvp += 4/12;
+            Q.new_middle_dnvp += 4/12;
+            Q.new_middle_dvp -= 4/12;
+            Q.old_middle_dvp -= 4/12;
+            Q.rural_dvp -= 4/12;
+        } else if (Q.unemployed > 25) {
+            Q.rural_nsdap += 5/12;
+            Q.unemployed_nsdap += 5/12;
+            Q.old_middle_nsdap += 5/12;
+            Q.new_middle_nsdap += 4/12;
+            Q.sa_strength += 50/12;
+        } else if (Q.unemployed > 20) {
+            Q.rural_nsdap += 2/12;
+            Q.unemployed_nsdap += 3/12;
+            Q.old_middle_nsdap += 3/12;
+            Q.new_middle_nsdap += 2/12;
+        }
     }
 }
 Q.has_event = 0;
