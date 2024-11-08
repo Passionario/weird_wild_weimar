@@ -1,4 +1,8 @@
 
+Nov 2024:
+
+Updated the mod to match 1.0 base game.
+
 v.0.5.
 
 - Interior Police update (added corruption and fabricating case against far right)
