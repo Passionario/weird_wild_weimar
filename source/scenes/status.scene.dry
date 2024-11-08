@@ -182,6 +182,6 @@ Support for internationalism: [+ (100-nationalism) +]%
 
 Support for socialism: [+ socialism +]%
 
-Support for pacifism: [+ pacifism +]%
+Support for pacifism: [+ pacifism : pacifist +]%
 
-[? if eat_the_rich >= 0: Support for eating the rich: [+ eat_the_rich +]% ?]
+[? if eat_the_rich >= 0: Support for eating the rich: [+ eat_the_rich : cannibalism +]% ?]
