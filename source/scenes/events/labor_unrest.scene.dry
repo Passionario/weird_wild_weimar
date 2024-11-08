@@ -27,6 +27,8 @@ Even though most workers grudgingly accept the our intervention, there is deep b
 
 @balance
 subtitle: Both sides need to share the pain in the current crisis.
-on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 2
+on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 2 catholics_spd += 3*(1-dissent); z_relation += 3
 
-Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces. This is perhaps the best we could do given the present circumstances.
+Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces.
+
+The Roman Catholic Church, through papal nuncio Eugenio Pacelli, expresses approval of our concilliatory efforts and hope that the rift between social classes will soon be mended.
