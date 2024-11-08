@@ -73,99 +73,6 @@ Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 SPD: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
-# 1928: 10, 1930: 13
-KPD: [+ kpd_r +]%
-# 1928: 5, 1930: 4 (as DstP)
-DDP: [+ ddp_r +]%
-# 1928: 9, 1930: 5
-DVP: [+ dvp_r +]%
-# 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]%
-# 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]%
-# 1928: 9, 1930: 10
-Others: [+ other_r +]%
-
-SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
-
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
-
-@cabinet
-go-to: menu
-
-Current cabinet:
-
-Labor: [+ labor_minister_party +]
-
-Interior: [+ interior_minister_party +]
-
-Finance: [+ finance_minister_party +]
-
-Economic: [+ economic_minister_party +]
-
-Justice: [+ justice_minister_party +]
-
-Foreign: [+ foreign_minister_party +]
-
-Reichswehr: [+ reichswehr_minister_party +]
-
-Agriculture: [+ agriculture_minister_party +]
-
-
-@demographics
-go-to: menu
-
-**Demographic Groups**
-
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the SPD or KPD. They make up 40-50% of the population.
-
-**Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
-
-**New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
-
-**Rural**: Small and large farmers and independent rural workers. Protestant farmers often support the DNVP. 20-30% of the population.
-
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
-
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the DDP, although substantial numbers support the SPD or KPD.
-
-
-@public_opinion
-on-arrival: {!
-Q.pro_republic = Math.round(Q.pro_republic);
-Q.nationalism = Math.round(Q.nationalism);
-Q.socialism = Math.round(Q.socialism);
-!}
-view-if: (not historical_mode) or game_over
-go-to: election_algorithm
-set-jump: election_projections
-
-**Public Opinion**
-
-#Support for Socialism: [+ socialism +]%
-
-#Support for Nationalism: [+ nationalism +]%
-
-Support for the Republic: [+ pro_republic +]%
-
-
-@election_projections
-view-if: (not historical_mode) or game_over
-go-to: menu
-
-**Projected election results** (if the election were to be held now):
-
-# 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_votes +]%
-
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
-
 # 1928: 15, 1930: 15, 1932: 
 Z + BVP: [+ z_votes +]%
 
@@ -272,6 +179,145 @@ Militarization: [+ sa_militancy : militancy +]
 **Official military/paramilitary groups:**
 
 **Reichswehr**: [+ reichswehr_strength +] thousand troops. This is Germany's military.
+
+Loyalty: [+ reichswehr_loyalty : loyalty +]
+
+**Prussian police**: [+ prussian_police_strength +] thousand members.
+
+Loyalty: [+ prussian_police_loyalty : loyalty +]
+
+
+
+@factions
+go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
+
+**Internal factions of the SPD**
+
+Overall dissent: [+ dissent_percent : dissent +]
+
+**Left**
+
+Many leftists are former members of the USPD (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the KPD, and some support extraparliamentary action.
+
+Strength: [+ left_strength : strength +]
+
+Dissent: [+ left_dissent : dissent +]
+
+**Centrists**
+
+Centrists in the SPD are followers of the doctrine of orthodox Marxism as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
+
+Strength: [+ center_strength : strength +]
+
+Dissent: [+ center_dissent : dissent +]
+
+**Labor**
+
+Many SPD members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
+
+Strength: [+ labor_strength : strength +]
+
+Dissent: [+ labor_dissent : dissent +]
+
+**Reformists**
+
+Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
+
+Strength: [+ reformist_strength : strength +]
+
+Dissent: [+ reformist_dissent : dissent +]
+
+@neorevisionists
+go-to: menu
+
+**Neorevisionists**
+
+Neorevisionists focus on defending the republic and expanding democracy, while also expanding the party's base beyond the working class to create a people's party. They support new propaganda methods and extraparliamentary action in defense of the republic.
+
+Strength: [+ neorevisionist_strength : strength +]
+
+Dissent: [+ neorevisionist_dissent : dissent +]
+
+
+@figures
+title: Figures and Charts
+go-to: menu
+on-arrival: z_minus_bvp_r = z_r - 3;
+on-display: {!
+data = [
+    {
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Q.kpd_r*5,
+    }];
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": Math.round(Q.sapd_r*5),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Q.spd_r*5,
+    },
+    {
+        "id": "ddp",
+        "legend": "DDP",
+        "name": "DDP",
+        "seats": Q.ddp_r*5,
+    },
+    {
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": (Q.z_r - 3)*5,
+    },
+    {
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": 3*5,
+    },
+    {
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Q.dvp_r*5,
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Q.other_r*5,
+    },
+    {
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Q.dnvp_r*5,
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Q.nsdap_r*5,
+    },
+]);
+if (d3 && window) {
+    // get screen width
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
 
     var lines = d3.linegraph(false, false,
             Q.parties,
