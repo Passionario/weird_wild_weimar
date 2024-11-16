@@ -12,7 +12,7 @@ if (Q.inflation) {
 
 = Status
 
-[+ month : month2 +] of [+ year: year2 +]
+Era: [+ month : month2 +] of [+ year: year2 +]
 
 Mana available: [+ resources +]
 
