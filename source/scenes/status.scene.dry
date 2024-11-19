@@ -31,7 +31,7 @@ Pontifex: [+ president +]
 
 Archon: [+ chancellor +] ([+ chancellor_party +])
 
-Soul claims:
+Souls claimed:
 
 # 1928: 30, 1930: 25, 1932: 22
 Cabal: [+ spd_r +]%
@@ -57,7 +57,7 @@ Madness: [+ inflation_2 +]%
 
 [? if black_thursday_seen = 1 : Emptiness: [+ unemployed_2 +]% ?]
 
-Next election: [+ next_election_month : month2 +] of [+ next_election_year : year2 +]
+Next ascension: [+ next_election_month : month2 +] of [+ next_election_year : year2 +]
 
 
 # = Mortal Opinion
