@@ -693,6 +693,7 @@ go-to: 1928_main
 May history have mercy on us, for the world will not.
 
 @1928_main
+audio: shuffle music/Danse_Macabre.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
