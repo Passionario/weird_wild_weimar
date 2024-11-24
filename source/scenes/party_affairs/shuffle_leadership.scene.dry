@@ -34,13 +34,13 @@ tags: remove_advisor
 
 
 @remove_hilferding
-title: Remove Hilferding
+title: Remove Maegista
 view-if: hilferding_advisor = 1
 on-arrival: hilferding_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Hilferding has been removed as an advisor. The Centrist faction disapproves.
+Maegista has been removed as an advisor. The Hermetic faction disapproves.
 
 @remove_wels
 title: Remove Picatrix
@@ -279,14 +279,14 @@ tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_adv
 frequency: 1
 
 
-- @centrist: Add Centrists
+- @centrist: Add Hermetics
 - @left: Add Leftists
 - @reformist: Add Reformists
 - @labor: Add Labor
 - @neorev: Add Neorevisionists
-- @nonfactional: Add non-factional advisors
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
+- @nonfactional: Add non-factional archmagi
+- @rm_main: Remove archmagi instead.
+- @remove_none: Stop changing archmagi.
 
 @centrist
 view-if: n_advisors < 3
@@ -319,8 +319,8 @@ view-if: n_advisors < 3
 - #nonfactional_advisor
 
 @add_hilferding
-title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians.
+title: Triss Maegista
+subtitle: Triss Maegista is a shaman and one of our chief Hermetic seers.
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
@@ -328,7 +328,7 @@ view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: hilferding_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Rudolf Hilferding is now an advisor.
+Triss Maegista is now an archmagus.
 
 @add_wels
 title: Madame Picatrix
