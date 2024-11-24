@@ -7,7 +7,7 @@ new-page: true
 
 = Madame Picatrix
 
-Picatrix is the long-time Hierophant of the Cabal. She is a gifted seer and a member of the Hermetic faction.
+Picatrix is the long-time Hierophant of the Cabal. She is a gifted telepath and a member of the Hermetic faction.
 
 - @clear_agenda
 - @party_discipline
@@ -29,18 +29,18 @@ if (Q.difficulty >= 0) {
 !}
 
 @party_discipline
-title: Domination
+title: Mental Domination
 subtitle: Reduce dissent across the Cabal.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
 
-We have enforced party discipline to reduce dissent across all factions.
+We have reined in turbulent minds to reduce dissent across all factions.
 
 @emergency_fundraising
-title: Crimson Harvest
+title: Reap Thoughts
 view-if: difficulty < 1 and dues > 0
-subtitle: Collect, increase or reduce the blood tithe.
+subtitle: Collect, increase or reduce the mana tithe.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6
