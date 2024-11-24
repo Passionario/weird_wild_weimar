@@ -7,28 +7,28 @@ on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/vorwarts_2.jpg
 go-to: rm_main
 
-Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
+Changing the inner circle of the Cabal is painful, but perhaps it is necessary to adapt to the chaos of reality and beyond.
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength and reduce their dissent.
+Removing archmagi will increase dissent from their faction, while selecting archmagi will increase a faction's strength and reduce their dissent.
 
-- @rm_main: Remove advisors
-- @add_advisors: Add advisors
-- @remove_none: Don't change advisors.
+- @rm_main: Remove archmagi
+- @add_advisors: Add archmagi
+- @remove_none: Don't change archmagi.
 - @easy_discard
 
 
 ###################### removing leaders
 
 @rm_main
-title: Remove advisors.
+title: Remove archmagi.
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
-- @add_advisors: Add advisors
+- @add_advisors: Add archmagi
 
 @remove_none
-title: Stop changing advisors.
+title: Stop changing archmagi.
 go-to: root
 tags: remove_advisor
 
@@ -52,13 +52,13 @@ go-to: rm_main
 Picatrix has been removed as an archmagus. The Hermetic faction disapproves.
 
 @remove_muller
-title: Remove Müller
+title: Remove Jack
 view-if: muller_advisor = 1
 tags: remove_advisor
 on-arrival: muller_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
+Jack has been removed as an archmagus. The Hermetic faction disapproves.
 
 
 @remove_breitscheid
@@ -344,7 +344,7 @@ Madame Picatrix is now an archmagus.
 
 @add_muller
 title: Hermann Müller
-subtitle: Hermann Müller is the last Social Democratic Chancellor.
+subtitle: Laughing Jack is the last Archon of the Cabal.
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
@@ -352,7 +352,7 @@ view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists
 on-arrival: muller_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Hermann Müller is now an advisor.
+Laughing Jack is now an archmagus.
 
 @add_breitscheid
 title: Rudolf Breitscheid
