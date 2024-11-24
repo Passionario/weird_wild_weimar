@@ -1,4 +1,4 @@
-title: Campaigning
+title: Take Control
 new-page: true
 on-arrival: month_actions += 1
 max-visits: 36
@@ -7,64 +7,64 @@ card-image: img/flags.jpg
 frequency: 100
 tags: party_affairs
 
-= Campaigning
+= Take Control
 
-Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
+Whether or not we are preparing for ascension, the Cabal is always trying to tighten its grasp on mortal souls. Who should we focus our efforts on?
 
-- @workers: The urban working class, our traditional support base.
-- @new_middle: The "new middle class" of government employees and white-collar workers.
-- @old_middle: The "old middle class" of small independent businessmen and artisans.
-- @rural: Rural workers and small farmers, who have felt neglected by us in the past.
-- @unemployed: The unemployed.
-- @catholics: Catholics, who typically support the Center Party.
-- @root: We either don't want to or cannot campaign right now.
+- @workers: The needful masses ruled by Desire, our preferred prey.
+- @new_middle: The cold-eyed servitors and spiteful enforcers of Cruelty.
+- @old_middle: The Pride-wracked circles of neurotic tyrants and savants.
+- @rural: Chaos emissaries and temporal exiles, who had felt forgotten by us in the unwritten futures.
+- @unemployed: The Hollow ones, whose hearts and minds have been consumed.
+- @catholics: New Faith zealots, who typically support the Neo-Templars.
+- @root: We either don't want to or cannot control any additional souls right now.
 - @easy_discard
 
 @workers
-subtitle: -1 resources
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; workers_spd += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
+We have strengthened our grip on the thralls of desire. [? if unemployed >= 15: The Hollowing Plague makes our efforts more difficult. ?][? if wtb_adopted = 1 : The patronage of the Threefold Hydra gives us greater sway over the masses. ?]
 
 @new_middle
-subtitle: -1 resources
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
 
-We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have strengthened our grip on the cruel executors. [? if socialism <= 49 and peoples_party == 0: The mental corrosion among this group makes our effort more difficult. ?] [? if peoples_party > 0: Thanks to the blessing of the Everdeep Maw, we have an easier time increasing control over the cruel than before. ?]
 
 @old_middle
-subtitle: -1 resources
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; old_middle_spd -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have strengthened our grip on the proud tyrants. [? if nationalism >= 51 and peoples_party == 0: The undercurrent of dread among this group make our effort more difficult. ?] [? if peoples_party > 0: Thanks to the blessing of the Everdeep Maw, we have an easier time increasing control over the proud than before. ?]
 
 @rural
-subtitle: -1 resources
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
 
-We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+We have done what we could to strengthen our grip on the time-lost. [? if peoples_party == 0: Our histories do not entirely overlap, and they do not bow to us. ?][? if peoples_party > 0: Thanks to the blessing of the Everdeep Maw, we have an easier time increasing control over them than before. ?][? if rural_policy >= 2 : Our chronal edicts have made it easier for us to exert control over them. ?]
 
 @unemployed
-subtitle: -1 resources
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
 
-We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
+We have strengthened our grip on the hollow. [? if welfare < 0: The bleeding of leylines and resultant withering make our efforts more difficult, since we share karmic resonance with those rites, and the strings that run from our hands may end up pulling us instead. ?][? if wtb_adopted = 1 : The patronage of the Threefold Hydra gives us greater sway over the hollow. ?]
 
 @catholics
-subtitle: -1 resources
+subtitle: -1 mana
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough mana.
 view-if: peoples_party == 1
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
 
-We have increased our campaigning among Catholics.
+We have strengthened our grip on the New Faithful.
