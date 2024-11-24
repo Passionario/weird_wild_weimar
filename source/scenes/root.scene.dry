@@ -165,7 +165,7 @@ Q.kpd_leader = "Morgana";
 Q.kpd_party_leader = "Morgana";
 Q.z_leader = "Mölöch";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Ubel";
+Q.z_party_leader = "Profane Prince";
 Q.nsdap_leader = "Great Beast";
 
 // hmm... maybe we can play nice with Hindenburg???
@@ -572,12 +572,12 @@ Q.meme_collapse_timer = 0;
 
 
 // all the initial advisors are centrists.
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
+Q.wels_advisor = 1; // Otto Wels - Madame Picatrix
+Q.muller_advisor = 1; // Hermann Müller - Laughing Jack
 Q.muller_dead = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+Q.hilferding_advisor = 1; // Rudolf Hilferding - Triss Maegista
 
 // left advisors
 Q.sender_advisor = 0; // Toni Sender
