@@ -1,13 +1,13 @@
-title: Otto Wels
+title: Madame Picatrix
 is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/WelsOtto.jpg
 view-if: wels_advisor = 1
 new-page: true
 
-= Otto Wels
+= Madame Picatrix
 
-Wels is the long-time chairman of the SPD. He is a gifted organizer and a member of the centrist faction.
+Picatrix is the long-time Hierophant of the Cabal. She is a gifted seer and a member of the Hermetic faction.
 
 - @clear_agenda
 - @party_discipline
@@ -15,7 +15,7 @@ Wels is the long-time chairman of the SPD. He is a gifted organizer and a member
 - @root: Return to main
 
 @clear_agenda
-title: Clear the agenda
+title: Mind Wipe
 subtitle: Removes all cards from the hand.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
@@ -29,8 +29,8 @@ if (Q.difficulty >= 0) {
 !}
 
 @party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
+title: Domination
+subtitle: Reduce dissent across the Cabal.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
@@ -38,9 +38,9 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; ce
 We have enforced party discipline to reduce dissent across all factions.
 
 @emergency_fundraising
-title: Fundraising
+title: Crimson Harvest
 view-if: difficulty < 1 and dues > 0
-subtitle: Collect, increase or reduce dues.
+subtitle: Collect, increase or reduce the blood tithe.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6
