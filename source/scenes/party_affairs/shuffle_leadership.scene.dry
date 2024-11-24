@@ -43,13 +43,13 @@ go-to: rm_main
 Hilferding has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_wels
-title: Remove Wels
+title: Remove Picatrix
 view-if: wels_advisor = 1
 tags: remove_advisor
 on-arrival: wels_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Wels has been removed as an advisor. The Centrist faction disapproves.
+Picatrix has been removed as an archmagus. The Hermetic faction disapproves.
 
 @remove_muller
 title: Remove Müller
@@ -331,8 +331,8 @@ go-to: advisor_menu
 Rudolf Hilferding is now an advisor.
 
 @add_wels
-title: Otto Wels
-subtitle: Otto Wels is a long-time party organizer and member of the leadership, serving under Friedrich Ebert.
+title: Madame Picatrix
+subtitle: Picatrix is a long-time adept and member of the inner circle, serving under the Seven-Hearted Duke.
 is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
@@ -340,7 +340,7 @@ view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: wels_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Otto Wels is now an advisor.
+Madame Picatrix is now an archmagus.
 
 @add_muller
 title: Hermann Müller
