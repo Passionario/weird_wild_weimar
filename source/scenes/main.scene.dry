@@ -1,20 +1,20 @@
-title: Next month
+title: Time rolls onward
 set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = 'Archmagi - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Archmagi - next action available in 1 month.';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = 'Archmagi - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
 max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 2 : The shadow reign of our rivals has fallen. Our next ascension is foretold for the Conquest-Time of this age. ?]
 
 - @party
 - @govt
@@ -26,18 +26,18 @@ set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = 'Archmagi - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Archmagi - next action available in 1 month.';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = 'Archmagi - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
 max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 2 : The shadow reign of our rivals has fallen. Our next ascension is foretold for the Conquest-Time of this age. ?]
 
 - @party
 - @govt
@@ -46,14 +46,14 @@ max-cards: 4
 
 
 @party
-title: Party Affairs
+title: Cabal Affairs
 card-image: img/Vorwaerts_nr_1.png
 is-deck: true
 
 - #party_affairs
 
 @govt
-title: Government Affairs
+title: Shadow Edicts
 view-if: time >= 6
 card-image: img/reichstag_2.jpg
 is-deck: true
