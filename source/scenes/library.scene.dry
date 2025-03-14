@@ -63,78 +63,77 @@ go-to: menu
 @curr_gov
 go-to: cabinet if spd_in_government; menu if not spd_in_government
 
-= Current Government
+= Current Shadow Reign
 
-President: [+ president +]
+Pontifex: [+ president +]
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+Archon: [+ chancellor +] ([+ chancellor_party +])
 
-Reichstag composition:
+The Ascended:
 
 # 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_r +]%
+Cabal: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
+Neo-Templars: [+ z_r +]%
 # 1928: 10, 1930: 13
-KPD: [+ kpd_r +]%
+Fair Folk: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 [+ ddp_name +]: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-DVP: [+ dvp_r +]%
+Old Ones: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]%
+Voidsworn: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]%
+Hell: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+Cabal position: [? if spd_toleration : bound ?][? if spd_in_government : ascendant - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : in shadows ?][? if spd_caretaker : Remnant Stewards ?]
+[? if in_weimar_coalition and spd_in_government: New World Order ?][? if in_grand_coalition and spd_in_government: Grand World Order ?][? if in_popular_front and spd_in_government: Faeldritch Accord ?][? if in_left_front and spd_in_government: Fae Pact ?][? if in_spd_majority and spd_in_government: Crowned in Glory ?][? if in_minority_government and spd_in_government: Puppet Masters ?][? if in_emergency_government and spd_in_government: Doomsday Procedure ?]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not in_spd_majority and not in_left_front : Pact dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and (in_left_front or in_popular_front): Fair Folk pact dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
 
-Current cabinet:
+Current Ministries:
 
-Labor: [+ labor_minister_party +]
+Marduk: [+ labor_minister_party +]
 
-Interior: [+ interior_minister_party +]
+Azazel: [+ interior_minister_party +]
 
-Finance: [+ finance_minister_party +]
+Mammon: [+ finance_minister_party +]
 
-Economic: [+ economic_minister_party +]
+Pandora: [+ economic_minister_party +]
 
-Justice: [+ justice_minister_party +]
+Nemesis: [+ justice_minister_party +]
 
-Foreign: [+ foreign_minister_party +]
+Belial: [+ foreign_minister_party +]
 
-Reichswehr: [+ reichswehr_minister_party +]
+Menhit: [+ reichswehr_minister_party +]
 
-Agriculture: [+ agriculture_minister_party +]
+Lilith: [+ agriculture_minister_party +]
 
 
 @demographics
 go-to: menu
 
-**Demographic Groups**
+**Souls**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the SPD or KPD. They make up 40-50% of the population.
+Each mortal soul has a dominant sin that is both the source of its strength and its greatest vulnerability.
 
-**Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
+**Desire**: The unsatisfied hunger of flesh and spirit. Many thralls of desire are under the sway of either the Cabal or the Fair Folk. They make up 40-50% of the population.
 
-**New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
+**Cruelty**: The pervasive venom of spite and hatred. Those poisoned by cruelty are the strongest acolytes of the forces of destruction. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. Protestant farmers often support the DNVP. 20-30% of the population.
+**Pride**: The vice of would-be monarchs and puppetmasters oblivious to their own strings. They are often entangled in conspiracies. 10-15% of the population.
 
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
+**Estrangement**: The yoke of survivors and outcasts of past cataclysms that devoured history. Time-lost exiles often turn to beings that predate time. 20-30% of the population.
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the DDP, although substantial numbers support the SPD or KPD.
-
+**Glory**: The fire that blinds and obliterates, burning within about 30% of the population. Its bearers disproportionately support the Neo-Templars (or the Knights Paradox in Avalon).
 
 @public_opinion
 on-arrival: {!
