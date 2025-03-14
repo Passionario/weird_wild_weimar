@@ -13,10 +13,10 @@ Whether or not we are preparing for ascension, the Cabal is always trying to tig
 
 - @workers: The needful masses ruled by Desire, our preferred prey.
 - @new_middle: The cold-eyed servitors and spiteful enforcers of Cruelty.
-- @old_middle: The Pride-wracked circles of neurotic tyrants and savants.
-- @rural: Chaos emissaries and temporal exiles, who had felt forgotten by us in the unwritten futures.
+- @old_middle: The Pride-wracked hierarchies of neurotic tyrants and savants.
+- @rural: The Estranged time-lost exiles, who had felt forgotten by us in the unwritten futures.
 - @unemployed: The Hollow ones, whose hearts and minds have been consumed.
-- @catholics: New Faith zealots, who typically support the Neo-Templars.
+- @catholics: Zealots of Glory, who typically support the Neo-Templars.
 - @root: We either don't want to or cannot control any additional souls right now.
 - @easy_discard
 
@@ -67,4 +67,4 @@ unavailable-subtitle: Not enough mana.
 view-if: peoples_party == 1
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
 
-We have strengthened our grip on the New Faithful.
+We have strengthened our grip on the Glory-touched.
